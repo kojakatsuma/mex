@@ -1,3 +1,6 @@
+const markdown = require('remark-parse')
+
+
 module.exports = function (config, env) {
   config.module.rules = config.module.rules.map(rule => {
     if (
@@ -8,7 +11,17 @@ module.exports = function (config, env) {
     }
     rule.oneOf.unshift({
       test: /.mdx$/,
-      use: ['babel-loader', '@mdx-js/loader']
+      use: [
+        {
+          loader: 'babel-loader'
+        }, {
+          loader: '@mdx-js/loader',
+          options: {
+            remarkPlugins: [
+              [markdown, { gfm: true }]
+            ]
+          }
+        }]
     })
     return rule
   })

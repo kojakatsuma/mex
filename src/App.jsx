@@ -1,17 +1,26 @@
 import React from 'react';
-import { Container, Typography } from '@material-ui/core';
-import { Post } from './Post';
-import Knowledge from './mdx/today-knowledge-20200129.mdx';
+import { Container, Typography, Paper, Divider } from '@material-ui/core';
+import { Posts } from './mdx';
+import 'github-markdown-css'
 
 export default () => {
   return (
-    <Container maxWidth="lg">
+    <Container maxWidth="md">
       <Typography variant="h1" >mex</Typography>
-      <Typography variant="h2" >here is mexico.</Typography>
-      <Container maxWidth="md">
-        {[...Array(60).keys()].map(i => <Post key={i} caption={`CAPTION No.${i}`} date={"2019.12.09"} summary={'HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH'}
-        ><Knowledge /></Post>)}
-      </Container>
+      <Typography variant="subtitle2" paragraph>here is mexico.</Typography>
+      {
+        Posts.map((Post, i) => {
+          return (
+            <>
+              <Divider />
+              <Paper style={{ marginBottom: '2em' }} square elevation={0} key={i} className="markdown-body">
+                <Post />
+              </Paper>
+            </>
+          )
+        })
+      }
+
     </Container>
   )
 }
