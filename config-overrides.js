@@ -1,12 +1,16 @@
 module.exports = function (config, env) {
-  config.module.rules.push(
-    {
-      test: /\.html$/,
-      loader: "html-loader",
-      options: {
-        minimize: true,
-      }
+  config.module.rules = config.module.rules.map(rule => {
+    if (
+      typeof rule.test !== 'undefined' ||
+      typeof rule.oneOf === 'undefined'
+    ) {
+      return rule
     }
-  )
-  return config;
+    rule.oneOf.unshift({
+      test: /.mdx$/,
+      use: ['babel-loader', '@mdx-js/loader']
+    })
+    return rule
+  })
+  return config
 }
