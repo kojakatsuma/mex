@@ -11,12 +11,12 @@ export default () => {
       {
         Posts.map((Post, i) => {
           return (
-            <>
+            <React.Fragment key={i}>
               <Divider />
-              <Paper style={{ marginBottom: '2em' }} square elevation={0} key={i} className="markdown-body">
+              <Paper style={{ marginBottom: '2em' }} square elevation={0} className="markdown-body">
                 <Post />
               </Paper>
-            </>
+            </React.Fragment>
           )
         })
       }

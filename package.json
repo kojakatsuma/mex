@@ -1,12 +1,13 @@
 {
   "name": "mex",
   "version": "0.1.0",
+  "homepage": "https://kojakatsuma.github.io/mex",
   "babel": {
     "presets": [
       [
         "@babel/env",
         {
-          "corejs": 2,
+          "corejs": 3,
           "useBuiltIns": "usage"
         }
       ],
@@ -27,7 +28,9 @@
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -49,6 +52,7 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "gh-pages": "^2.2.0",
     "react-app-rewired": "^2.1.5",
     "react-test-renderer": "^16.12.0"
   }
