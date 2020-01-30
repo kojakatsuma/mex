@@ -25,7 +25,11 @@ exports[`App test 1`] = `
       }
     }
   >
-    <20200130.mdx />
+    <p
+      className="MuiTypography-root MuiTypography-body1"
+    >
+      <20200130-2.mdx />
+    </p>
   </div>
   <hr
     className="MuiDivider-root"
@@ -38,7 +42,28 @@ exports[`App test 1`] = `
       }
     }
   >
-    <20200129.mdx />
+    <p
+      className="MuiTypography-root MuiTypography-body1"
+    >
+      <20200130.mdx />
+    </p>
+  </div>
+  <hr
+    className="MuiDivider-root"
+  />
+  <div
+    className="MuiPaper-root markdown-body MuiPaper-elevation0"
+    style={
+      Object {
+        "marginBottom": "2em",
+      }
+    }
+  >
+    <p
+      className="MuiTypography-root MuiTypography-body1"
+    >
+      <20200129.mdx />
+    </p>
   </div>
 </div>
 `;
