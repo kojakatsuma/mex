@@ -1,8 +1,8 @@
 import React from 'react';
 import { Container, Typography, Paper, Divider } from '@material-ui/core';
 import { Posts } from './mdx';
-import 'github-markdown-css'
-import './index.css'
+import 'github-markdown-css';
+import './index.css';
 
 export default () => {
   return (
@@ -15,7 +15,9 @@ export default () => {
             <React.Fragment key={i}>
               <Divider />
               <Paper style={{ marginBottom: '2em' }} square elevation={0} className="markdown-body">
+                <Typography>
                 <Post />
+                </Typography>
               </Paper>
             </React.Fragment>
           )
