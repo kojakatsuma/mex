@@ -15,7 +15,7 @@ export default () => {
             <React.Fragment key={i}>
               <Divider />
               <Paper style={{ marginBottom: '2em' }} square elevation={0} className="markdown-body">
-                <Typography>
+                <Typography component={'span'} >
                 <Post />
                 </Typography>
               </Paper>
