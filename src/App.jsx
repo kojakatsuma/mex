@@ -2,6 +2,7 @@ import React from 'react';
 import { Container, Typography, Paper, Divider } from '@material-ui/core';
 import { Posts } from './mdx';
 import 'github-markdown-css'
+import './index.css'
 
 export default () => {
   return (
