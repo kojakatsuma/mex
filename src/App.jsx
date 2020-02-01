@@ -9,6 +9,7 @@ import MPLUSRounded1c from './fonts/MPLUSRounded1c-Light.ttf';
 
 const mPlusRoundedlc = {
   fontFamily: 'MPLUSRounded1c',
+  fontDisplay: 'swap',
   src: `
   local('MPLUSRounded1c'), url(${MPLUSRounded1c}) format('truetype');
   `
@@ -25,7 +26,7 @@ const theme = createMuiTheme({
     }
   },
   typography: {
-    fontFamily: "MPLUSRounded1c",
+    fontFamily: "MPLUSRounded1c,sans-serif",
   }, overrides: {
     MuiCssBaseline: {
       '@global': {
