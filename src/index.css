@@ -4,3 +4,8 @@
 .markdown-body h4 {
   border-bottom: initial;
 }
+
+@font-face {
+  font-family: 'M PLUS Rounded 1c';
+  src: local('M PLUS Rounded 1c'), url(./fonts/MPLUSRounded1c-Light.ttf) format('truetype');
+}
