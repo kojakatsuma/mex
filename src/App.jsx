@@ -48,7 +48,7 @@ export default () => {
   })
   return (
     <ThemeProvider theme={theme}>
-      <Container maxWidth="md">
+      <Container maxWidth={false} style={{maxWidth: 680}}>
         <CssBaseline />
         {loaded ? <Fade in={loaded} timeout={{ enter: 800 }}>
           <Paper elevation={0}>
@@ -60,7 +60,7 @@ export default () => {
                   <React.Fragment key={i}>
                     <Divider />
                     <Paper style={{ marginBottom: '2em' }} square elevation={0} className='markdown-body' >
-                      <Typography component='span' >
+                      <Typography component='article' >
                         <Post />
                       </Typography>
                     </Paper>
