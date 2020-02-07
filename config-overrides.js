@@ -1,4 +1,6 @@
 const markdown = require('remark-parse')
+const slugs = require('remark-slug')
+const headings = require('remark-autolink-headings')
 
 
 module.exports = function (config, env) {
@@ -18,7 +20,11 @@ module.exports = function (config, env) {
           loader: '@mdx-js/loader',
           options: {
             remarkPlugins: [
-              [markdown, { gfm: true }]
+              [markdown, { gfm: true }],
+              slugs,
+              [headings, {
+                behavior: 'wrap'
+              }]
             ]
           }
         }]

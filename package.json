@@ -55,6 +55,8 @@
     "@testing-library/user-event": "^7.1.2",
     "gh-pages": "^2.2.0",
     "react-app-rewired": "^2.1.5",
-    "react-test-renderer": "^16.12.0"
+    "react-test-renderer": "^16.12.0",
+    "remark-autolink-headings": "^5.2.1",
+    "remark-slug": "^5.1.2"
   }
 }
