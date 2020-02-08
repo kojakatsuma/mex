@@ -6,8 +6,10 @@ import a20200204 from './20200204.mdx';
 import a202002042 from './20200204-2.mdx';
 import a202002043 from './20200204-3.mdx';
 import a20200208 from './20200208.mdx'
+import a202002082 from './20200208-2.mdx';
 
 export const Posts = [
+  a202002082,
   a20200208,
   a202002043,
   a202002042,
