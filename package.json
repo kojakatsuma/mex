@@ -1,62 +1,42 @@
 {
-  "name": "mex",
-  "version": "0.1.0",
-  "homepage": "https://kojakatsuma.github.io/mex",
-  "babel": {
-    "presets": [
-      [
-        "@babel/env",
-        {
-          "corejs": 3,
-          "useBuiltIns": "usage"
-        }
-      ],
-      "@babel/react"
-    ]
-  },
-  "private": true,
-  "dependencies": {
-    "@material-ui/core": "^4.9.0",
-    "@material-ui/icons": "^4.5.1",
-    "fontfaceobserver": "^2.1.0",
-    "github-markdown-css": "^3.0.1",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "react-router-dom": "^5.1.2",
-    "react-scripts": "3.3.0"
+  "name": "with-firebase-hosting-and-typescript",
+  "version": "1.0.0",
+  "description": "Host Next.js SSR app on Firebase Cloud Functions with Firebase Hosting redirects. Built with typescript.",
+  "engines": {
+    "node": "10"
   },
   "scripts": {
-    "start": "react-app-rewired start",
-    "build": "react-app-rewired build",
-    "test": "react-app-rewired test",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "dev": "next src/app",
+    "preserve": "npm run build-public && npm run build-functions && npm run build-app && npm run copy-deps && npm run install-deps",
+    "serve": "cross-env NODE_ENV=production firebase serve",
+    "deploy": "firebase deploy",
+    "clean": "rimraf \"dist/functions\" && rimraf \"dist/public\"",
+    "build-app": "next build \"src/app\"",
+    "build-public": "cpx \"src/public/**/*.*\" \"dist/public\" -C",
+    "build-functions": "tsc --project src/functions",
+    "lint-app": "tslint --project src/app",
+    "typecheck-app": "tsc --project src/app",
+    "lint-functions": "tslint --project src/functions",
+    "copy-deps": "cpx \"*{package.json,package-lock.json,yarn.lock}\" \"dist/functions\" -C",
+    "install-deps": "cd \"dist/functions\" && npm i"
   },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "dependencies": {
+    "firebase-admin": "^8.9.0",
+    "firebase-functions": "^3.1.0",
+    "next": "latest",
+    "react": "16.8.6",
+    "react-dom": "16.8.6"
   },
   "devDependencies": {
-    "@mdx-js/loader": "^1.5.5",
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
-    "gh-pages": "^2.2.0",
-    "react-app-rewired": "^2.1.5",
-    "react-test-renderer": "^16.12.0",
-    "remark-autolink-headings": "^5.2.1",
-    "remark-slug": "^5.1.2"
+    "@types/node": "12.0.12",
+    "@types/react": "^16.6.0",
+    "@types/react-dom": "16.8.4",
+    "cpx": "1.5.0",
+    "cross-env": "5.2.0",
+    "firebase-tools": "^7.1.0",
+    "rimraf": "2.6.2",
+    "tslint": "^5.11.0",
+    "tslint-react": "^3.6.0",
+    "typescript": "^3.2.0"
   }
 }
