@@ -1,9 +1,11 @@
-import Header from './Header'
+import Header from './Header';
+import dynamic from 'next/dynamic'
+const Posts = dynamic(() => import('./mdx'), { loading: () => <p>...</p>})
 
-const App = ({ children }: { children?: any }) => (
+const App = () => (
   <main>
     <Header />
-    {children}
+    <Posts />
   </main>
 )
 
