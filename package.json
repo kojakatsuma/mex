@@ -9,7 +9,7 @@
     "dev": "next src/app",
     "preserve": "npm run build-public && npm run build-functions && npm run build-app && npm run copy-deps && npm run install-deps",
     "serve": "cross-env NODE_ENV=production firebase serve",
-    "deploy": "firebase deploy",
+    "deploy": "NODE_ENV=production firebase deploy",
     "clean": "rimraf \"dist/functions\" && rimraf \"dist/public\"",
     "build-app": "next build \"src/app\"",
     "build-public": "cpx \"src/public/**/*.*\" \"dist/public\" -C",
@@ -25,7 +25,7 @@
     "@next/mdx": "^9.2.2",
     "firebase-admin": "^8.9.0",
     "firebase-functions": "^3.1.0",
-    "next": "9.0.6",
+    "next": "^9.2.2",
     "react": "16.8.6",
     "react-dom": "16.8.6",
     "react-twitter-embed": "^3.0.3"
