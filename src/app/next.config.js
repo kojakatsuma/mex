@@ -1,14 +1,15 @@
 
 const rehypePrism = require('@mapbox/rehype-prism')
 const withMDX = require('@next/mdx')({
-  options:{
+  options: {
     rehypePlugins: [rehypePrism],
   },
   extension: /\.mdx?$/
 })
+const withFonts = require('next-fonts')
 
 
-module.exports = withMDX({
+module.exports = withFonts(withMDX({
   distDir: '../../dist/functions/next',
   webpack: config => {
     config.module.rules.push({
@@ -27,4 +28,4 @@ module.exports = withMDX({
     })
     return config
   },
-})
+}))
