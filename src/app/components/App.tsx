@@ -1,21 +1,23 @@
-import Header from './Header';
 import { Posts } from './mdx';
-import { Typography, Divider } from '@material-ui/core';
+import { Typography, Divider, Container, Paper } from '@material-ui/core';
 
 const App = () => (
-  <main>
-    <Header />
+  <Container maxWidth={false} style={{ maxWidth: 680 }}>
+    <Paper elevation={0}>
     {
       Posts.map((Post, i) => {
         return (
-          <Typography component='article' key={i}>
-            <Post />
-            <Divider />
-          </Typography>
+          <Paper key={i} style={{ marginBottom: '2em' }} square={true} elevation={0} >
+            <Typography component='article' >
+              <Post />
+              <Divider />
+            </Typography>
+          </Paper>
         )
       })
     }
-  </main>
+    </Paper>
+  </Container >
 )
 
 export default App
