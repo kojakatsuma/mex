@@ -1,12 +1,20 @@
-import dynamic from 'next/dynamic';
 import Header from './Header';
-
-const Posts = dynamic(() => import('./mdx'), { loading: () => <p>...</p>})
+import {Posts} from './mdx';
+import { Typography, Divider } from '@material-ui/core';
 
 const App = () => (
   <main>
     <Header />
-    <Posts />
+    {
+      Posts.map((Post,i)=>{
+        return (
+        <Typography component='article' key={i}>
+           <Post/>
+          <Divider />
+        </Typography>
+        )
+      })
+    }
   </main>
 )
 

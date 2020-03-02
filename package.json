@@ -21,6 +21,7 @@
     "install-deps": "cd \"dist/functions\" && npm i"
   },
   "dependencies": {
+    "@material-ui/core": "^4.9.5",
     "@mdx-js/loader": "^1.5.7",
     "@next/mdx": "^9.2.2",
     "firebase-admin": "^8.9.0",
