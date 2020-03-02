@@ -19,6 +19,7 @@
         "function": "nextApp"
       }
     ],
-    "predeploy": "npm run build-public"
+    "predeploy": "npm run build-public",
+    "postdeploy": "npm run clean"
   }
 }

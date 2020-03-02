@@ -7,7 +7,7 @@ const colorCode = '#ffffff'
 
 const mPlusRoundedlc = {
   fontFamily: 'MPLUSRounded1c',
-  src: `url(/static/fonts/MPLUSRounded1c-Light.ttf) format('truetype')`
+  src: `url(/static/fonts/MPLUSRounded1c-Light.ttf) format('truetype')`,
 }
 
 const theme = createMuiTheme({
@@ -24,7 +24,7 @@ const theme = createMuiTheme({
     MuiCssBaseline: {
       '@global': {
         '@font-face': [mPlusRoundedlc],
-        'backgroundColor': 'white'
+        'backgroundColor': 'white',
       },
     },
   },
