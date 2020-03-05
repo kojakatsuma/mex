@@ -25,6 +25,10 @@ const theme = createMuiTheme({
       '@global': {
         '@font-face': [mPlusRounded1c],
         'backgroundColor': 'white',
+        'a': {
+          'color': '#0366d6',
+          'text-decoration': 'none'
+        }
       },
     },
   },
