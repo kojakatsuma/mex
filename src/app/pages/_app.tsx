@@ -6,7 +6,7 @@ import { useEffect } from 'react';
 
 const colorCode = '#ffffff'
 
-const mPlusRoundedlc = {
+const mPlusRounded1c = {
   fontFamily: 'M PLUS Rounded 1c'
 }
 
@@ -23,14 +23,14 @@ const theme = createMuiTheme({
   overrides: {
     MuiCssBaseline: {
       '@global': {
-        '@font-face': [mPlusRoundedlc],
+        '@font-face': [mPlusRounded1c],
         'backgroundColor': 'white',
       },
     },
   },
 })
 
-function MyApp({ Component, pageProps }: AppProps) {
+const MyApp = ({ Component, pageProps }: AppProps) => {
   useEffect(() => {
     const jssStyles = document.querySelector('#jss-server-side');
     if (jssStyles) {
