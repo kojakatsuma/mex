@@ -2,12 +2,12 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import { AppProps } from 'next/app';
 import 'prism-themes/themes/prism-vs.css';
+import { useEffect } from 'react';
 
 const colorCode = '#ffffff'
 
 const mPlusRoundedlc = {
-  fontFamily: 'MPLUSRounded1c',
-  src: `url(/static/fonts/MPLUSRounded1c-Light.ttf) format('truetype')`,
+  fontFamily: 'M PLUS Rounded 1c'
 }
 
 const theme = createMuiTheme({
@@ -18,7 +18,7 @@ const theme = createMuiTheme({
     },
   },
   typography: {
-    fontFamily: 'MPLUSRounded1c,sans-serif',
+    fontFamily: `'M PLUS Rounded 1c', sans-serif`,
   },
   overrides: {
     MuiCssBaseline: {
@@ -31,6 +31,12 @@ const theme = createMuiTheme({
 })
 
 function MyApp({ Component, pageProps }: AppProps) {
+  useEffect(() => {
+    const jssStyles = document.querySelector('#jss-server-side');
+    if (jssStyles) {
+      jssStyles.parentElement?.removeChild(jssStyles);
+    }
+  }, []);
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
