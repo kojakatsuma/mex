@@ -22,13 +22,7 @@ export default class extends Document {
   public render() {
     return (
       <Html>
-        <Head>
-          <link
-            href='https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c:300&display=swap'
-            rel='stylesheet'
-          />
-
-        </Head>
+        <Head />
         <body>
           <Main />
           <NextScript />

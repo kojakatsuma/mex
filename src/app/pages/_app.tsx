@@ -6,10 +6,6 @@ import { useEffect } from 'react';
 
 const colorCode = '#ffffff'
 
-const mPlusRounded1c = {
-  fontFamily: 'M PLUS Rounded 1c'
-}
-
 const theme = createMuiTheme({
   palette: {
     background: {
@@ -23,9 +19,8 @@ const theme = createMuiTheme({
   overrides: {
     MuiCssBaseline: {
       '@global': {
-        '@font-face': [mPlusRounded1c],
-        'backgroundColor': 'white',
-        'a': {
+        backgroundColor: 'white',
+        a: {
           'color': '#0366d6',
           'text-decoration': 'none'
         }
@@ -44,6 +39,14 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
+      <style jsx={true} global={true}> {`
+        @font-face {
+          font-family: 'M PLUS Rounded 1c';
+            src: url('static/fonts/MPLUSRounded1c-Light.ttf');
+            font-display: swap;
+        }
+      `}
+      </style>
       <Component {...pageProps} />
     </ThemeProvider>
   )
