@@ -42,7 +42,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
       <style jsx={true} global={true}> {`
         @font-face {
           font-family: 'M PLUS Rounded 1c';
-            src: url('static/fonts/MPLUSRounded1c-Light.ttf');
+            src: url('/fonts/MPLUSRounded1c-Light.ttf');
             font-display: swap;
         }
       `}

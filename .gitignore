@@ -4,3 +4,7 @@ dist/
 .firebase/
 
 node_modules
+firebase-debug.log
+
+src/public/**
+src/public/!placeholder.html
