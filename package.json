@@ -19,7 +19,7 @@
     "lint-functions": "tslint --project src/functions",
     "copy-deps": "cpx \"*{package.json,package-lock.json,yarn.lock}\" \"dist/functions\" -C",
     "install-deps": "cd \"dist/functions\" && npm i",
-    "prebuild-public": "cpx \"src/app/public/**/*.*\" \"src/public\" -C"
+    "prebuild-public": "cpx \"src/app/public/**/*.*\" \"src/public\""
   },
   "dependencies": {
     "@material-ui/core": "^4.9.5",
