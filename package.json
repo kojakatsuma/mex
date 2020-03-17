@@ -43,7 +43,7 @@
     "file-loader": "^5.1.0",
     "firebase-tools": "^7.1.0",
     "next-fonts": "^1.0.3",
-    "rimraf": "2.6.2",
+    "rimraf": "3.0.2",
     "tslint": "^5.11.0",
     "tslint-react": "^3.6.0",
     "typescript": "^3.2.0"
