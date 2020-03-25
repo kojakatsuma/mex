@@ -7,11 +7,14 @@ import a202002042 from './20200204-2.mdx';
 import a202002043 from './20200204-3.mdx';
 import a20200208 from './20200208.mdx'
 import a202002082 from './20200208-2.mdx';
-import a20200220 from './202002220.mdx';
+import a20200220 from './20200220.mdx';
 import a20200309 from './20200309.mdx';
 import a20200317 from './20200317.mdx';
+import a20200325 from './20200325.mdx';
+
 
 export const Posts = [
+  a20200325,
   a20200317,
   a20200309,
   a20200220,

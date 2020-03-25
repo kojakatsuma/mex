@@ -1,7 +1,7 @@
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import { AppProps } from 'next/app';
-import 'prism-themes/themes/prism-vs.css';
+import 'prism-themes/themes/prism-material-dark.css';
 import { useEffect } from 'react';
 
 const colorCode = '#ffffff'
