@@ -22,9 +22,7 @@ export default class extends Document {
   public render() {
     return (
       <Html>
-        <Head >
-          <title>here is mexico</title>
-        </Head>
+        <Head />
         <body>
           <Main />
           <NextScript />

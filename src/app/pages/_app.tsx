@@ -3,6 +3,7 @@ import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import { AppProps } from 'next/app';
 import 'prism-themes/themes/prism-material-dark.css';
 import { useEffect } from 'react';
+import Head from 'next/head';
 
 const colorCode = '#ffffff'
 
@@ -37,18 +38,23 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
     }
   }, []);
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <style jsx={true} global={true}> {`
+    <>
+      <Head>
+        <title>here is mexico</title>
+      </Head>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <style jsx={true} global={true}> {`
         @font-face {
           font-family: 'M PLUS Rounded 1c';
             src: url('/fonts/MPLUSRounded1c-Light.ttf');
             font-display: swap;
         }
       `}
-      </style>
-      <Component {...pageProps} />
-    </ThemeProvider>
+        </style>
+        <Component {...pageProps} />
+      </ThemeProvider>
+    </>
   )
 }
 
