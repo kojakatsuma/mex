@@ -1,8 +1,10 @@
 import React from 'react';
 import { TwitterTweetEmbed } from 'react-twitter-embed';
-
-export const TwitterCard = ({id}) => {
+import { Lazy } from './Lazy';
+export const TwitterCard = ({ id }) => {
   return (
-    <TwitterTweetEmbed tweetId={id}/>
+    <Lazy>
+      <TwitterTweetEmbed tweetId={id} />
+    </Lazy>
   );
 }
