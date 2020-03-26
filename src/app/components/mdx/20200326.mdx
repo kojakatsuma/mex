@@ -2,4 +2,37 @@ import { OGP } from '../OGP';
 
 ## 2020.03.26
 
+自分でOGPクライアント作ってみた。動くかテスト。
+
 <OGP url='https://employment.en-japan.com/engineerhub/entry/2020/02/18/103000'/>
+
+コードはこんな感じ。もう少し改良する。
+
+```jsx
+export const OGP = ({ url }) => {
+  const [og, setOg] = useState(null)
+
+  useEffect(() => {
+    if (!og) {
+      Axios.get(url, { responseType: 'document' }).then((res) => {
+        let [image, title] = ['', '']
+        res.data.head.childNodes.forEach((child) => {
+          if (child.nodeName === 'META') {
+            if (child.getAttribute('property') === 'og:image') {
+              image = child.getAttribute('content')
+            }
+            if (child.getAttribute('property') === 'og:title') {
+              title = child.getAttribute('content')
+            }
+          }
+        })
+        setOg({ image, title })
+      })
+    }
+  }, [og])
+
+  return (
+    <Lazy>{og ? <> <p>{og.title}</p> <img src={og.image} width={'50%'} /> </> : 'loading'}</Lazy>
+  );
+}
+````
