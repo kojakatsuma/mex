@@ -1,6 +1,28 @@
 import React, { useState, useEffect } from 'react';
 import Axios from 'axios';
-import { Lazy } from './Lazy';
+import { Card, CardMedia, CardHeader, makeStyles, Typography, Link } from '@material-ui/core';
+
+const useStyles = makeStyles(_theme => ({
+  root: {
+    maxWidth: 345,
+  },
+  media: {
+    height: 0,
+    paddingTop: '56.25%', // 16:9
+  }
+}))
+
+const Thumbnail = ({ image, title, url }) => {
+  const { root, media } = useStyles()
+  return (
+    <Link href={url} underline='none' target="_blank" rel="noopener">
+      <Card className={root}>
+        <CardHeader title={<Typography variant='body2'> {title} </Typography>} />
+        <CardMedia className={media} image={image} title={title} />
+      </Card>
+    </Link>
+  )
+}
 
 export const OGP = ({ url }) => {
   const [og, setOg] = useState(null)
@@ -22,9 +44,9 @@ export const OGP = ({ url }) => {
         setOg({ image, title })
       })
     }
-  }, [og])
+  }, [og, Axios])
 
   return (
-    <Lazy>{og ? <> <p>{og.title}</p> <img src={og.image} width={'50%'} /> </> : 'loading'}</Lazy>
+    <>{og ? <Thumbnail image={og.image} title={og.title} url={url} /> : 'loading'}</>
   );
 }

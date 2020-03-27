@@ -12,10 +12,12 @@ import a20200309 from './20200309.mdx';
 import a20200317 from './20200317.mdx';
 import a20200325 from './20200325.mdx';
 import a20200326 from './20200326.mdx';
+import a20200327 from './20200327.mdx';
 
 
 
 export const Posts = [
+  a20200327,
   a20200326,
   a20200325,
   a20200317,
