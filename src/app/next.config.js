@@ -10,6 +10,7 @@ const withFonts = require('next-fonts')
 
 
 module.exports = withFonts(withMDX({
+  pageExtensions: ['mdx', 'jsx', 'js', 'ts', 'tsx'],
   distDir: '../../dist/functions/next',
   webpack: config => {
     config.module.rules.push({
