@@ -4,7 +4,7 @@ import { AppProps } from 'next/app';
 import 'prism-themes/themes/prism-material-dark.css';
 import { useEffect } from 'react';
 import Head from 'next/head';
-import { Container } from '@material-ui/core';
+import { Container, Typography } from '@material-ui/core';
 
 const colorCode = '#ffffff'
 
@@ -57,6 +57,8 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
       `}
         </style>
         <Container maxWidth={false} style={{ maxWidth: 900 }}>
+          <Typography variant='h1'>Mex</Typography>
+          <Typography variant='h6'>here is mexico.</Typography>
           <Component {...pageProps} />
         </ Container>
       </ThemeProvider>
