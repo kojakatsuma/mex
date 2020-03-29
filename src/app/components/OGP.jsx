@@ -15,12 +15,13 @@ const useStyles = makeStyles(_theme => ({
 const Thumbnail = ({ image, title, url }) => {
   const { root, media } = useStyles()
   return (
-    <Link href={url} underline='none' target="_blank" rel="noopener">
-      <Card className={root}>
+    <Card className={root}>
+      <Link href={url} underline='none' target="_blank" rel="noopener">
         <CardHeader title={<Typography variant='body2'> {title} </Typography>} />
         <CardMedia className={media} image={image} title={title} />
-      </Card>
-    </Link>
+      </Link>
+    </Card>
+
   )
 }
 
