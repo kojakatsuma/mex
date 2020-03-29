@@ -1,12 +1,23 @@
 
 const rehypePrism = require('@mapbox/rehype-prism')
+const heading = require('remark-autolink-headings')
+const slug = require('remark-slug')
+
 const withMDX = require('@next/mdx')({
   options: {
+    remarkPlugins: [slug,
+      [
+        heading, {
+          behavior: 'wrap'
+        }
+      ]
+    ],
     rehypePlugins: [rehypePrism],
   },
   extension: /\.mdx?$/
 })
 const withFonts = require('next-fonts')
+
 
 
 module.exports = withFonts(withMDX({

@@ -21,9 +21,12 @@ const theme = createMuiTheme({
   overrides: {
     MuiCssBaseline: {
       '@global': {
-        backgroundColor: 'white',
-        a: {
+        'a': {
           'color': '#0366d6',
+          'text-decoration': 'none'
+        },
+        'h2 > a': {
+          'color': '#111111',
           'text-decoration': 'none'
         }
       },
