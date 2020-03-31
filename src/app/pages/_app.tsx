@@ -25,7 +25,7 @@ const theme = createMuiTheme({
           'color': '#0366d6',
           'text-decoration': 'none'
         },
-        'h2 > a': {
+        '.inactive-link': {
           'color': '#111111',
           'text-decoration': 'none'
         }

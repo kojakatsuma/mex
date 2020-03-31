@@ -8,7 +8,8 @@ const withMDX = require('@next/mdx')({
     remarkPlugins: [slug,
       [
         heading, {
-          behavior: 'wrap'
+          behavior: 'wrap',
+          linkProperties: { class: 'inactive-link' }
         }
       ]
     ],
