@@ -42,7 +42,7 @@
     "cpx": "1.5.0",
     "cross-env": "7.0.2",
     "file-loader": "^6.0.0",
-    "firebase-tools": "^7.16.1",
+    "firebase-tools": "^7.16.2",
     "next-fonts": "^1.0.3",
     "remark-autolink-headings": "^6.0.0",
     "remark-slug": "^6.0.0",
