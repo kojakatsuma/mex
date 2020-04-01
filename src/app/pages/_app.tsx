@@ -5,22 +5,6 @@ import 'prism-themes/themes/prism-material-dark.css';
 import { useEffect } from 'react';
 import Head from 'next/head';
 import { Container, Typography } from '@material-ui/core';
-import { Router } from 'next/router';
-
-
-Router.events.on('routeChangeStart', url => {
-  console.log(`Loading: ${url}`)
-  const loading = document.createElement('h1')
-  loading.innerText = 'loading'
-  loading.id = 'loading'
-  document.body.appendChild(loading)
-})
-Router.events.on('routeChangeComplete', () => {
-  const laoding = document.getElementById('loading')
-  if (laoding) {
-    document.body.removeChild(laoding)
-  }
-})
 
 const colorCode = '#ffffff'
 
