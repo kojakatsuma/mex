@@ -7,7 +7,7 @@ jobs:
       - checkout 
       - run:
           name: npm install
-          command: npm i
+          command: npm ci
       - run:
           name: deploy to Firebase Hosting
           command: npm run deploy:ci
