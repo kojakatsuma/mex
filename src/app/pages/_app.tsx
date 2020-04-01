@@ -5,6 +5,7 @@ import 'prism-themes/themes/prism-material-dark.css';
 import { useEffect } from 'react';
 import Head from 'next/head';
 import { Container, Typography } from '@material-ui/core';
+import { PageTransition } from 'next-page-transitions'
 
 const colorCode = '#ffffff'
 
@@ -34,7 +35,7 @@ const theme = createMuiTheme({
   },
 })
 
-const MyApp = ({ Component, pageProps }: AppProps) => {
+const MyApp = ({ Component, pageProps, router }: AppProps) => {
   useEffect(() => {
     const jssStyles = document.querySelector('#jss-server-side');
     if (jssStyles) {
@@ -54,12 +55,28 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
             src: url('/fonts/MPLUSRounded1c-Light.ttf');
             font-display: swap;
         }
+        .page-transition-enter {
+          opacity: 0;
+        }
+        .page-transition-enter-active {
+          opacity: 1;
+          transition: opacity 300ms;
+        }
+        .page-transition-exit {
+          opacity: 1;
+        }
+        .page-transition-exit-active {
+          opacity: 0;
+          transition: opacity 300ms;
+        }
       `}
         </style>
         <Container maxWidth={false} style={{ maxWidth: 900 }}>
           <Typography variant='h1'>Mex</Typography>
           <Typography variant='h6'>here is mexico.</Typography>
-          <Component {...pageProps} />
+          <PageTransition timeout={100} classNames='page-transition'>
+            <Component {...pageProps} key={router.route} />
+          </PageTransition>
         </ Container>
       </ThemeProvider>
     </>
