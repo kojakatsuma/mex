@@ -10,6 +10,7 @@
     "preserve": "npm run build-public && npm run build-functions && npm run build-app && npm run copy-deps && npm run install-deps",
     "serve": "cross-env NODE_ENV=production firebase serve",
     "deploy": "NODE_ENV=production firebase deploy",
+    "deploy:ci": "NODE_ENV=production firebase deploy --token=$FIREBASE_TOKEN",
     "clean": "rimraf \"dist/functions\" && rimraf \"dist/public\"",
     "build-app": "next build \"src/app\"",
     "build-public": "cpx \"src/public/**/*.*\" \"dist/public\" -C",
