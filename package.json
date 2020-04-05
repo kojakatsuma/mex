@@ -25,7 +25,7 @@
   "dependencies": {
     "@material-ui/core": "^4.9.7",
     "@mdx-js/loader": "^1.5.7",
-    "@next/mdx": "^9.3.1",
+    "@next/mdx": "^9.3.4",
     "axios": "^0.19.2",
     "firebase-admin": "^8.10.0",
     "firebase-functions": "^3.5.0",
