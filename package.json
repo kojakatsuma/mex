@@ -40,7 +40,7 @@
     "@mapbox/rehype-prism": "^0.4.0",
     "@types/node": "13.11.0",
     "@types/react": "^16.9.32",
-    "@types/react-dom": "16.9.5",
+    "@types/react-dom": "16.9.6",
     "cpx": "1.5.0",
     "cross-env": "7.0.2",
     "file-loader": "^6.0.0",
