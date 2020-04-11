@@ -46,7 +46,7 @@ const MyApp = ({ Component, pageProps, router }: AppProps) => {
     <>
       <Head>
         <title>here is mexico</title>
-        <link href='https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@300&display=swap' rel="stylesheet" />
+        <link href='https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@300&display=swap' rel='stylesheet' />
       </Head>
       <ThemeProvider theme={theme}>
         <CssBaseline />
