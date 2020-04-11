@@ -17,7 +17,7 @@ const theme = createMuiTheme({
     },
   },
   typography: {
-    fontFamily: `'M PLUS Rounded 1c', sans-serif`,
+    fontFamily: `'M PLUS 1p', sans-serif`,
   },
   overrides: {
     MuiCssBaseline: {
@@ -46,15 +46,11 @@ const MyApp = ({ Component, pageProps, router }: AppProps) => {
     <>
       <Head>
         <title>here is mexico</title>
+        <link href='https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@300&display=swap' rel="stylesheet" />
       </Head>
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <style jsx={true} global={true}> {`
-        @font-face {
-          font-family: 'M PLUS Rounded 1c';
-            src: url('/fonts/MPLUSRounded1c-Light.ttf');
-            font-display: swap;
-        }
         .page-transition-enter {
           opacity: 0;
         }

@@ -21,11 +21,9 @@ const withMDX = require('@next/mdx')({
   },
   extension: /\.mdx?$/
 })
-const withFonts = require('next-fonts')
 
 
-
-module.exports = withFonts(withMDX({
+module.exports = withMDX({
   pageExtensions: ['md', 'mdx', 'jsx', 'js', 'ts', 'tsx'],
   distDir: '../../dist/functions/next',
   webpack: config => {
@@ -45,4 +43,4 @@ module.exports = withFonts(withMDX({
     })
     return config
   },
-}))
+})
