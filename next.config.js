@@ -25,7 +25,6 @@ const withMDX = require('@next/mdx')({
 
 module.exports = withMDX({
   pageExtensions: ['md', 'mdx', 'jsx', 'js', 'ts', 'tsx'],
-  distDir: '../../dist/functions/next',
   webpack: config => {
     config.module.rules.push({
       test: /\.(txt|jpg|jpeg|png|svg|gif)$/,
