@@ -44,7 +44,7 @@
     "cpx": "1.5.0",
     "cross-env": "7.0.2",
     "file-loader": "^6.0.0",
-    "firebase-tools": "^8.0.2",
+    "firebase-tools": "^8.1.0",
     "remark-autolink-headings": "^6.0.0",
     "remark-ogp": "github:kojakatsuma/remark-ogp",
     "remark-slug": "^6.0.0",
