@@ -1,5 +1,5 @@
 {
-  "name": "with-firebase-hosting-and-typescript",
+  "name": "mex",
   "version": "1.0.0",
   "description": "Host Next.js SSR app on Firebase Cloud Functions with Firebase Hosting redirects. Built with typescript.",
   "engines": {
@@ -10,9 +10,10 @@
     "clean": "rimraf \"dist/functions\" && rimraf \"dist/public\"",
     "build": "next build",
     "export": "next export",
-    "start": "next start",
+    "start": "next start -p 8080",
     "lint-app": "tslint --project",
-    "typecheck-app": "tsc --project"
+    "typecheck-app": "tsc --project",
+    "deploy": "gcloud builds submit --tag gcr.io/cloudrun-turorial/helloworld"
   },
   "dependencies": {
     "@material-ui/core": "^4.9.9",
