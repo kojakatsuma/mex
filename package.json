@@ -16,11 +16,8 @@
     "deploy": "gcloud builds submit --tag gcr.io/cloudrun-turorial/helloworld"
   },
   "dependencies": {
-    "@material-ui/core": "^4.9.9",
     "@mdx-js/loader": "^1.5.8",
     "axios": "^0.19.2",
-    "firebase-admin": "^8.10.0",
-    "firebase-functions": "^3.6.0",
     "next": "^9.3.4",
     "next-page-transitions": "^1.0.0-beta.2",
     "prism-themes": "^1.4.0",
