@@ -32,9 +32,14 @@ const MyApp = ({ Component, pageProps, router }: AppProps) => {
             color: #111111;
             text-decoration: none;
           }
-          body,h2,h1 {
+          body,h1,h2,h3,h4,h6,h6 {
             font-family: "Hiragino Sans",sans-serif;
             font-weight: 200;
+          }
+          hr {
+            border: none;
+            height: 1px;
+            background-color: #3333331f;
           }
         `}
       </style>

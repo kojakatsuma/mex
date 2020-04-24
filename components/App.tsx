@@ -3,7 +3,7 @@ import { Posts } from './mdx';
 const App = () =>
   Posts.map((Post, i) => {
     return (
-      <div key={i} style={{ marginBottom: '2em' }}>
+      <div key={i}>
         <Post />
         <hr />
       </div>
