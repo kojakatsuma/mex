@@ -13,7 +13,8 @@
     "start": "next start -p 8080",
     "lint-app": "tslint --project",
     "typecheck-app": "tsc --project",
-    "deploy": "gcloud builds submit --tag gcr.io/cloudrun-turorial/helloworld"
+    "deploy": "gcloud builds submit --tag gcr.io/caramel-spot-275216/mex",
+    "deploy:cloudrun": "gcloud run deploy --image=gcr.io/caramel-spot-275216/mex --platform=managed"
   },
   "dependencies": {
     "@mdx-js/loader": "^1.5.8",
