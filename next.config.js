@@ -2,14 +2,12 @@
 const rehypePrism = require('@mapbox/rehype-prism')
 const heading = require('remark-autolink-headings')
 const slug = require('remark-slug')
-const ogp = require('remark-ogp')
 
 
 const withMDX = require('@next/mdx')({
   options: {
     remarkPlugins: [
       slug,
-      ogp,
       [
         heading, {
           behavior: 'wrap',

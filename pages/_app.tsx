@@ -24,10 +24,6 @@ const MyApp = ({ Component, pageProps, router }: AppProps) => {
             opacity: 0;
             transition: opacity 300ms;
           }
-          a {
-            color: #0366d6;
-            text-decoration: none;
-          }
           .inactive-link {
             color: #111111;
             text-decoration: none;
@@ -49,7 +45,7 @@ const MyApp = ({ Component, pageProps, router }: AppProps) => {
           }
           h1 {
             font-size: 42.667px;
-            line-height: 104px;
+            line-height: 52px;
             margin-block-start: 0px;
             margin-block-end: 0px;
           }
@@ -72,17 +68,24 @@ const MyApp = ({ Component, pageProps, router }: AppProps) => {
             margin-block-end: 0px;
           }
           .header {
-            font-size: 64px;
+            margin-block-start: 50px;
+            margin-block-end: 10px;
+          }
+          .header > h1 {
+            font-size: 104px;
+            margin-block-end: 20px;
           }
           .menu {
-            line-height: 64px;
             cursor: pointer;
+            color: #0366d6;
           }
         `}
       </style>
       <div style={{ maxWidth: 900, marginLeft: 'auto', marginRight: 'auto' }}>
-        <h1 className='header'>Mex</h1>
-        <h3>here is mexico.</h3>
+        <div className='header'>
+          <h1>Mex</h1>
+          <h3>here is mexico.</h3>
+        </div>
         <PageTransition timeout={100} classNames='page-transition'>
           <Component {...pageProps} key={router.route} />
         </PageTransition>
