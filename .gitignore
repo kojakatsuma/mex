@@ -9,3 +9,6 @@ firebase-debug.log
 src/public/**
 !src/public/placeholder.html
 !src/public/favicon.ico
+
+.next
+out
