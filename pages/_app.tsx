@@ -32,8 +32,14 @@ const MyApp = ({ Component, pageProps, router }: AppProps) => {
             color: #111111;
             text-decoration: none;
           }
-          body,h1,h2,h3,h4,h6,h6 {
-            font-family: "Hiragino Sans",sans-serif;
+          body,
+          h1,
+          h2,
+          h3,
+          h4,
+          h6,
+          h6 {
+            font-family: 'Hiragino Sans', sans-serif;
             font-weight: 200;
           }
           hr {
@@ -41,11 +47,42 @@ const MyApp = ({ Component, pageProps, router }: AppProps) => {
             height: 1px;
             background-color: #3333331f;
           }
+          h1 {
+            font-size: 42.667px;
+            line-height: 104px;
+            margin-block-start: 0px;
+            margin-block-end: 0px;
+          }
+          h2 {
+            font-size: 25.6px;
+            line-height: 64px;
+            margin-block-start: 0px;
+            margin-block-end: 0px;
+          }
+          h3 {
+            font-size: 18.286px;
+            line-height: 40px;
+            margin-block-start: 0px;
+            margin-block-end: 0px;
+          }
+          body {
+            font-size: 16px;
+            line-height: 24px;
+            margin-block-start: 0px;
+            margin-block-end: 0px;
+          }
+          .header {
+            font-size: 64px;
+          }
+          .menu {
+            line-height: 64px;
+            cursor: pointer;
+          }
         `}
       </style>
       <div style={{ maxWidth: 900, marginLeft: 'auto', marginRight: 'auto' }}>
-        <h1>Mex</h1>
-        <h2>here is mexico.</h2>
+        <h1 className='header'>Mex</h1>
+        <h3>here is mexico.</h3>
         <PageTransition timeout={100} classNames='page-transition'>
           <Component {...pageProps} key={router.route} />
         </PageTransition>
