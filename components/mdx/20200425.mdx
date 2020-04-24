@@ -1,0 +1,15 @@
+import { TwitterCard } from '../TwitterCard.tsx';
+
+## 2020.04.09
+あまりにも遅すぎるのでブログを色々と見直した。
+- firebase hosting + Cloud Functions から CloudRun へ移行
+- material-uiの使用をやめる(そもそもそこまで依存してなかった)。
+- GoogleFontsをやめる
+
+結果、かなり高速になった。
+
+<TwitterCard id='1253730281426530304' />
+
+多分一番効果があったのはGoogleFontsをやめたこと、Windowsだと違う感じに見えるかも...と危惧したけど、思い切ってやめた。まぁこの辺はまた変えるかも。
+
+次はCIの部分をやろうと思う。deployめんどくさいので。
