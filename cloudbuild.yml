@@ -17,5 +17,6 @@ steps:
       - "us-central1"
       - "--platform"
       - "managed"
+      - "--allow-unauthenticated"
 images:
   - "gcr.io/$PROJECT_ID/mex:$COMMIT_SHA"
