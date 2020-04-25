@@ -14,7 +14,7 @@
     "lint-app": "tslint --project",
     "typecheck-app": "tsc --project",
     "builds": "gcloud builds submit --tag gcr.io/caramel-spot-275216/mex",
-    "deploy": "gcloud run deploy --image=gcr.io/caramel-spot-275216/mex --platform=managed"
+    "deploy": "gcloud run deploy mex --image=gcr.io/caramel-spot-275216/mex --platform=managed --region=us-central1"
   },
   "dependencies": {
     "@mdx-js/loader": "^1.5.8",
