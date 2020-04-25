@@ -46,34 +46,34 @@ const MyApp = ({ Component, pageProps, router }: AppProps) => {
           h1 {
             font-size: 42.667px;
             line-height: 52px;
-            margin-block-start: 0px;
-            margin-block-end: 0px;
+            margin-top: 0px;
+            margin-bottom: 0px;
           }
           h2 {
             font-size: 25.6px;
             line-height: 64px;
-            margin-block-start: 0px;
-            margin-block-end: 0px;
+            margin-top: 0px;
+            margin-bottom: 0px;
           }
           h3 {
             font-size: 18.286px;
             line-height: 40px;
-            margin-block-start: 0px;
-            margin-block-end: 0px;
+            margin-top: 0px;
+            margin-bottom: 0px;
           }
           body {
             font-size: 16px;
             line-height: 24px;
-            margin-block-start: 0px;
-            margin-block-end: 0px;
+            margin-top: 0px;
+            margin-bottom: 0px;
           }
           .header {
-            margin-block-start: 50px;
-            margin-block-end: 10px;
+            margin-top: 50px;
+            margin-bottom: 10px;
           }
           .header > h1 {
             font-size: 104px;
-            margin-block-end: 20px;
+            margin-bottom: 20px;
           }
           .menu {
             cursor: pointer;
@@ -81,7 +81,7 @@ const MyApp = ({ Component, pageProps, router }: AppProps) => {
           }
         `}
       </style>
-      <div style={{ maxWidth: 900, marginLeft: 'auto', marginRight: 'auto' }}>
+      <div style={{ maxWidth: 900, padding: '5px', marginLeft: 'auto', marginRight: 'auto' }}>
         <div className='header'>
           <h1>Mex</h1>
           <h3>here is mexico.</h3>
