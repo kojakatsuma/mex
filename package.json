@@ -26,7 +26,7 @@
     "react-twitter-embed": "^3.0.3"
   },
   "devDependencies": {
-    "@next/mdx": "^9.3.4",
+    "@next/mdx": "^9.3.5",
     "@mapbox/rehype-prism": "^0.4.0",
     "@types/node": "13.11.1",
     "@types/react": "^16.9.34",
