@@ -78,6 +78,7 @@ const MyApp = ({ Component, pageProps, router }: AppProps) => {
           .menu {
             cursor: pointer;
             color: #0366d6;
+            text-decoration: none;
           }
         `}
       </style>

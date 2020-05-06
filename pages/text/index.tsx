@@ -9,6 +9,9 @@ export default () => {
       <Link href='text/2'>
         <h2 className='menu'>オンラインセッションを録音する</h2>
       </Link>
+      <a className='menu' href='https://qiita.com/koja1234'>
+        <h2>Qiitaの投稿記事</h2>
+      </a>
     </>
   );
 };
