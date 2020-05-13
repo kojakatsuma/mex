@@ -3,7 +3,7 @@ import Head from 'next/head'
 export const OGPHeder = ({ url, title, description, image }) => {
     return (
         <Head>
-            <title key='titel'>{title} - mex.busui.org</title>
+            <title key='title'>{title} - mex.busui.org</title>
             <meta name="twitter:card" content="summary" />
             <meta name="twitter:site" content="@keihin194" />
             <meta name="twitter:creator" content="@keihin194" />
