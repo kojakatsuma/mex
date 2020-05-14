@@ -41,7 +41,7 @@ const useScroll = (target: React.RefObject<HTMLDivElement>) => {
   return mounted;
 };
 
-export const Lazy = ({ children }) => {
+export const Lazy = ({ children }: { children: React.ReactNode }) => {
   const target = useRef<HTMLDivElement>(null);
   const mounted = useScroll(target);
   return <div ref={target}>{mounted ? children : <div>loading</div>}</div>;
