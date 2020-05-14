@@ -1,28 +1,48 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-export const Lazy = ({ children }) => {
-  const [mounted, setMounted] = useState(false)
-  const target = useRef<HTMLDivElement>(null)
+const useScroll = (target: React.RefObject<HTMLDivElement>) => {
+  const [mounted, setMounted] = useState(false);
   useEffect(() => {
-    if (target && target.current) {
-      const { top } = target.current.getBoundingClientRect()
-      const fire = () => {
-        if (!mounted && (window.pageYOffset + window.innerHeight) > top) {
-          setMounted(true)
-          window.removeEventListener('scroll', fire)
-        }
+    if (!mounted && target && target.current) {
+      const { top, bottom } = target.current.getBoundingClientRect();
+      const windowBottom = window.pageYOffset + window.innerHeight;
+      const elementTopYoffset = window.pageYOffset + top;
+
+      const windowTop = window.pageYOffset;
+      const elemetBottomYoffset = window.pageYOffset + bottom;
+
+      if (windowBottom > elementTopYoffset && windowTop < elemetBottomYoffset) {
+        setMounted(true);
       }
-      if ((window.pageYOffset + window.innerHeight) > top) {
-        fire()
-      } else {
-        window.addEventListener('scroll', fire)
-      }
-      return () => window.removeEventListener('scroll', fire)
     }
   }, [setMounted]);
-  return (
-    <div ref={target}>
-      {mounted ? children : <div>loading</div>}
-    </div>
-  );
-}
+  useEffect(() => {
+    const fire = () => {
+      if (!mounted && target && target.current) {
+        const { top, bottom } = target.current.getBoundingClientRect();
+        const windowBottom = window.pageYOffset + window.innerHeight;
+        const elementTopYoffset = window.pageYOffset + top;
+
+        const windowTop = window.pageYOffset;
+        const elemetBottomYoffset = window.pageYOffset + bottom;
+
+        if (windowBottom > elementTopYoffset && windowTop < elemetBottomYoffset) {
+          setMounted(true);
+        }
+      }
+    };
+    if (!mounted) {
+      window.addEventListener('scroll', fire);
+    } else {
+      window.removeEventListener('scroll', fire);
+    }
+    return () => window.removeEventListener('scroll', fire);
+  }, [setMounted]);
+  return mounted;
+};
+
+export const Lazy = ({ children }) => {
+  const target = useRef<HTMLDivElement>(null);
+  const mounted = useScroll(target);
+  return <div ref={target}>{mounted ? children : <div>loading</div>}</div>;
+};
