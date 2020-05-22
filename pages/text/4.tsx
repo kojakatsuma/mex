@@ -1,12 +1,13 @@
+
 import { Text, Props } from '../../components/Text';
 
 export async function getStaticProps() {
-  const data = await fetch('https://notion-api.splitbee.io/v1/page/af5e175f6cc04f67bf64f9f8e4808a4c').then((res) =>
+  const data = await fetch('https://notion-api.splitbee.io/v1/page/7e787aad303a43dd8fa4e6f51cc1ecce').then((res) =>
     res.json(),
   );
   return {
     props: {
-      url: '/text/3',
+      url: '/text/4',
       blockMap: data,
     },
   };

@@ -80,6 +80,9 @@ const MyApp = ({ Component, pageProps, router }: AppProps) => {
             color: #0366d6;
             text-decoration: none;
           }
+          .notion-quote {
+            color: #777777;
+          }
         `}
       </style>
       <div style={{ maxWidth: 900, padding: '5px', marginLeft: 'auto', marginRight: 'auto' }}>

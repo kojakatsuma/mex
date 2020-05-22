@@ -12,6 +12,9 @@ export default () => {
       <Link href='text/3'>
         <h3 className='menu'>「可傷的な歴史(ロードムービー)」を観た</h3>
       </Link>
+      <Link href='text/4'>
+        <h3 className='menu'>react-router-domのSwitchは必要？</h3>
+      </Link>
       <a className='menu' href='https://qiita.com/koja1234'>
         <h3>Qiitaの投稿記事</h3>
       </a>
