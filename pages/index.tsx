@@ -10,6 +10,10 @@ export default () => {
       <Link href='text'>
         <h1 className='menu'>text</h1>
       </Link>
+      <br />
+      <Link href='whoami'>
+        <h1 className='menu'>who am i?</h1>
+      </Link>
     </>
   );
 };

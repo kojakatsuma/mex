@@ -1,8 +1,8 @@
 import { AppProps } from 'next/app';
+import Link from 'next/link';
 import 'react-notion/src/styles.css';
 import 'prism-themes/themes/prism-vs.css';
 import Head from 'next/head';
-import { PageTransition } from 'next-page-transitions';
 const MyApp = ({ Component, pageProps, router }: AppProps) => {
   return (
     <>
@@ -11,20 +11,6 @@ const MyApp = ({ Component, pageProps, router }: AppProps) => {
       </Head>
       <style jsx={true} global={true}>
         {`
-          .page-transition-enter {
-            opacity: 0;
-          }
-          .page-transition-enter-active {
-            opacity: 1;
-            transition: opacity 300ms;
-          }
-          .page-transition-exit {
-            opacity: 1;
-          }
-          .page-transition-exit-active {
-            opacity: 0;
-            transition: opacity 300ms;
-          }
           .inactive-link {
             color: #111111;
             text-decoration: none;
@@ -63,7 +49,8 @@ const MyApp = ({ Component, pageProps, router }: AppProps) => {
             margin-top: 0px;
             margin-bottom: 0px;
           }
-          p, body {
+          p,
+          body {
             font-size: 16px !important;
             line-height: 30px !important;
           }
@@ -74,6 +61,7 @@ const MyApp = ({ Component, pageProps, router }: AppProps) => {
           .header > h1 {
             font-size: 104px;
             margin-bottom: 20px;
+            cursor: pointer;
           }
           .menu {
             cursor: pointer;
@@ -87,12 +75,20 @@ const MyApp = ({ Component, pageProps, router }: AppProps) => {
       </style>
       <div style={{ maxWidth: 900, padding: '5px', marginLeft: 'auto', marginRight: 'auto' }}>
         <div className='header'>
-          <h1>Mex</h1>
+          <Link href='/'>
+            <h1>Mex</h1>
+          </Link>
           <h3>here is mexico.</h3>
         </div>
-        <PageTransition timeout={100} classNames='page-transition'>
-          <Component {...pageProps} key={router.route} />
-        </PageTransition>
+        <Component {...pageProps} />
+        {router.route !== '/' && router.route !== '/log' && (
+          <>
+            <hr />
+            <Link href='/'>
+              <h3 className='menu'>{'back to top'}</h3>
+            </Link>
+          </>
+        )}
       </div>
     </>
   );
