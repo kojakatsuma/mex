@@ -1,10 +1,10 @@
 import { Posts } from './mdx';
-import { OGPHeder } from './OGPHeder';
+import { OGPHeader } from './OGPHeader';
 
 const App = () => {
   return (
     <>
-      <OGPHeder url={'/log'} title='log' />
+      <OGPHeader url={'/log'} title='log' />
       {Posts.map((Post, i) => {
         return (
           <div key={i}>

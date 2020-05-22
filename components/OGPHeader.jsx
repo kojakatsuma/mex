@@ -1,6 +1,6 @@
 import Head from 'next/head'
 
-export const OGPHeder = ({ url, title, description, image }) => {
+export const OGPHeader = ({ url, title, description, image }) => {
     return (
         <Head>
             <title key='title'>{title} - mex.busui.org</title>
