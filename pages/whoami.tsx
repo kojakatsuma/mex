@@ -1,6 +1,9 @@
+import { OGPHeader } from '../components/OGPHeader';
+
 export default () => {
   return (
     <>
+      <OGPHeader url='/whoami' title={'who am i?'} />
       <h2>name</h2>
       koja
       <h2>job</h2>
