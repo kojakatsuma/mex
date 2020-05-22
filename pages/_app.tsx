@@ -63,7 +63,7 @@ const MyApp = ({ Component, pageProps, router }: AppProps) => {
             margin-top: 0px;
             margin-bottom: 0px;
           }
-          p {
+          p,body {
             font-size: 16px !important;
             line-height: 30px !important;
             margin-top: 0px !important;
