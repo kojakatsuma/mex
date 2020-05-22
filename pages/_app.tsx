@@ -1,5 +1,6 @@
 import { AppProps } from 'next/app';
-import 'prism-themes/themes/prism-material-dark.css';
+import 'react-notion/src/styles.css';
+import 'prism-themes/themes/prism-vs.css';
 import Head from 'next/head';
 import { PageTransition } from 'next-page-transitions';
 const MyApp = ({ Component, pageProps, router }: AppProps) => {
