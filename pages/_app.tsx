@@ -29,6 +29,7 @@ const MyApp = ({ Component, pageProps, router }: AppProps) => {
             color: #111111;
             text-decoration: none;
           }
+          p,
           body,
           h1,
           h2,
@@ -62,11 +63,11 @@ const MyApp = ({ Component, pageProps, router }: AppProps) => {
             margin-top: 0px;
             margin-bottom: 0px;
           }
-          body {
-            font-size: 16px;
-            line-height: 30px;
-            margin-top: 0px;
-            margin-bottom: 0px;
+          p {
+            font-size: 16px !important;
+            line-height: 30px !important;
+            margin-top: 0px !important;
+            margin-bottom: 0px !important;
           }
           .header {
             margin-top: 50px;

@@ -3,7 +3,7 @@ import { OGPHeader } from '../../components/OGPHeader';
 
 export async function getStaticProps() {
   const data: BlockMapType = await fetch(
-    'https://notion-api.splitbee.io/v1/page/7134d8e3adfa47cea6b693b26d226639',
+    'https://notion-api.splitbee.io/v1/page/42392e719d594fa58f0e1efd34021862',
   ).then((res) => res.json());
   const { created_time, last_edited_time } = Object.values(data)[0].value;
   return {
@@ -17,7 +17,7 @@ export async function getStaticProps() {
 
 export default ({ createdTime, lastEditedTime, blockMap }) => (
   <>
-    <OGPHeader url={'/text/1'} title={'生活を改善する3月'} description={'生活を改善するための月報'}/>
+    <OGPHeader url={'/text/2'} title={'オンラインセッションを録音する'} description={'オンラインセッションを録音する方法を検証する'}/>
     Created: {createdTime} <br />
     Last Edited: {lastEditedTime}
     <NotionRenderer blockMap={blockMap} />
