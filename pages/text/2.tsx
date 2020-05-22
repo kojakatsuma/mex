@@ -1,5 +1,6 @@
 import { NotionRenderer, BlockMapType } from 'react-notion';
 import { OGPHeader } from '../../components/OGPHeader';
+import { fmtDateTime } from '../../utils/index';
 
 export async function getStaticProps() {
   const data: BlockMapType = await fetch(
@@ -8,8 +9,8 @@ export async function getStaticProps() {
   const { created_time, last_edited_time } = Object.values(data)[0].value;
   return {
     props: {
-      createdTime: new Date(created_time).toString(),
-      lastEditedTime: new Date(last_edited_time).toString(),
+      createdTime: fmtDateTime(created_time),
+      lastEditedTime: fmtDateTime(last_edited_time),
       blockMap: data,
     },
   };
