@@ -18,6 +18,9 @@ export default () => {
       <Link href='text/5'>
         <h3 className='menu'>react-routerとreact-router-domの違い</h3>
       </Link>
+      <Link href='text/6'>
+        <h3 className='menu'>オンラインセッションを録音する その2</h3>
+      </Link>
       <a className='menu' href='https://qiita.com/koja1234'>
         <h3>Qiitaの投稿記事</h3>
       </a>
