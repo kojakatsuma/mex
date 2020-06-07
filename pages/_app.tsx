@@ -15,6 +15,7 @@ const MyApp = ({ Component, pageProps, router }: AppProps) => {
             color: #111111;
             text-decoration: none;
           }
+          .notion,
           p,
           body,
           h1,
