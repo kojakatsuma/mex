@@ -8,10 +8,6 @@ export default () => {
       koja
       <h2>job</h2>
       web engineer
-      <h2>company</h2>
-      <a className='menu' href='https://ubiregi.com'>
-        Ubiregi
-      </a>
       <h2>sns</h2>
       <a className='menu' href='https://twitter.com/keihin194'>
         twitter
