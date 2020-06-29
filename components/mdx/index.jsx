@@ -23,9 +23,11 @@ import a20200521 from './20200521.mdx';
 import a20200522 from './20200522.mdx';
 import a20200524 from './20200524.mdx';
 import a20200529 from './20200529.mdx';
+import a20200630 from './20200630.mdx';
 
 
 export const Posts = [
+  a20200630,
   a20200529,
   a20200524,
   a20200522,
