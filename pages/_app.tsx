@@ -15,6 +15,9 @@ const MyApp = ({ Component, pageProps, router }: AppProps) => {
             color: #111111;
             text-decoration: none;
           }
+          a {
+            text-decoration: none;
+          }
           .notion,
           p,
           body,
@@ -50,10 +53,9 @@ const MyApp = ({ Component, pageProps, router }: AppProps) => {
             margin-top: 0px;
             margin-bottom: 0px;
           }
-          p,
           body {
-            font-size: 16px !important;
-            line-height: 30px !important;
+            font-size: 16px;
+            line-height: 30px;
           }
           .header {
             margin-top: 50px;
