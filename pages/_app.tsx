@@ -16,6 +16,7 @@ const MyApp = ({ Component, pageProps, router }: AppProps) => {
             text-decoration: none;
           }
           a {
+            color: #0366d6;
             text-decoration: none;
           }
           .notion,
