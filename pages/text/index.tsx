@@ -3,6 +3,9 @@ import Link from 'next/link';
 export default () => {
   return (
     <>
+      <Link href='text/7'>
+        <h3 className='menu'>TouchDesignerのCHOP自分用まとめ</h3>
+      </Link>
       <Link href='text/6'>
         <h3 className='menu'>オンラインセッションを録音する その2</h3>
       </Link>
