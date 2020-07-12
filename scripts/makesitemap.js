@@ -33,7 +33,6 @@ const siteMmap = xml
     encoding: 'UTF-8',
   })
   .att('xmlns', 'http://www.sitemaps.org/schemas/sitemap/0.9')
-  .ele('url')
   .ele(locs);
 
 fs.writeFileSync('public/sitemap.xml',siteMmap.end({ pretty: true }))
