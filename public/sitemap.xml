@@ -41,6 +41,10 @@
     <priority>1</priority>
   </url>
   <url>
+    <loc>https://mex.busui.org/text/8</loc>
+    <priority>1</priority>
+  </url>
+  <url>
     <loc>https://mex.busui.org/text/</loc>
     <priority>0.5</priority>
   </url>
