@@ -27,9 +27,11 @@ import a20200630 from './20200630.mdx';
 import a20200701 from './20200701.mdx';
 import a20200708 from "./20200708.mdx";
 import a20200726 from './20200726.mdx';
+import a20200826 from './20200826.mdx';
 
 
 export const Posts = [
+  a20200826,
   a20200726,
   a20200708,
   a20200701,
