@@ -41,7 +41,7 @@
     "remark-slug": "^6.0.0",
     "tslint": "^6.1.2",
     "tslint-react": "^5.0.0",
-    "typescript": "^3.9.7",
+    "typescript": "^4.0.2",
     "xmlbuilder": "^15.1.1"
   }
 }
