@@ -5,7 +5,7 @@ import a20200201 from './20200201.mdx';
 import a20200204 from './20200204.mdx';
 import a202002042 from './20200204-2.mdx';
 import a202002043 from './20200204-3.mdx';
-import a20200208 from './20200208.mdx'
+import a20200208 from './20200208.mdx';
 import a202002082 from './20200208-2.mdx';
 import a20200220 from './20200220.mdx';
 import a20200309 from './20200309.mdx';
@@ -25,12 +25,13 @@ import a20200524 from './20200524.mdx';
 import a20200529 from './20200529.mdx';
 import a20200630 from './20200630.mdx';
 import a20200701 from './20200701.mdx';
-import a20200708 from "./20200708.mdx";
+import a20200708 from './20200708.mdx';
 import a20200726 from './20200726.mdx';
 import a20200826 from './20200826.mdx';
-
+import a20200911 from './20200911.mdx';
 
 export const Posts = [
+  a20200911,
   a20200826,
   a20200726,
   a20200708,
@@ -60,5 +61,5 @@ export const Posts = [
   a20200201,
   a202001302,
   a20200130,
-  a20200129
-]
+  a20200129,
+];
