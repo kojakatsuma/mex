@@ -1,9 +1,25 @@
 import { AppProps } from 'next/app';
 import Link from 'next/link';
+import Router from 'next/router';
 import 'react-notion/src/styles.css';
 import 'prism-themes/themes/prism-vs.css';
 import Head from 'next/head';
+import { useEffect } from 'react';
+import { GA_ID, pageview } from '../libs/gtag';
 const MyApp = ({ Component, pageProps, router }: AppProps) => {
+  useEffect(() => {
+    if (!GA_ID) {
+      return;
+    }
+    const handleRouteChange = (path) => {
+      pageview(path);
+    };
+
+    Router.events.on('routeChangeComplete', handleRouteChange);
+    return () => {
+      Router.events.off('routeChangeComplete', handleRouteChange);
+    };
+  }, []);
   return (
     <>
       <Head>

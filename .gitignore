@@ -12,3 +12,4 @@ src/public/**
 
 .next
 out
+.env
