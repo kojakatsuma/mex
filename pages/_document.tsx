@@ -1,7 +1,6 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 
 import { GA_ID } from '../libs/gtag';
-console.log(GA_ID)
 export default class MyDocument extends Document {
   render() {
     return (
