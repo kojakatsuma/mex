@@ -8,16 +8,12 @@ const sketch = (p: p5) => {
   let theta = 0;
   p.draw = () => {
     p.background(255);
-    p.frameRate(30);
     p.stroke(0);
-    if(p.frameCount > 300){
-        p.noLoop()
-    }
     const a = (p.frameCount / p.width) * 180;
     theta = p.radians(a);
     p.translate(p.width / 2, p.height);
-    p.line(0, 0, 0, -10);
-    p.translate(0, -10);
+    p.line(0, 0, 0, -100);
+    p.translate(0, -100);
     branch(40);
   };
   const branch = (h = 400) => {
