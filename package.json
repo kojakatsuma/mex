@@ -21,8 +21,10 @@
   },
   "dependencies": {
     "@mdx-js/loader": "^1.6.16",
+    "@types/p5": "^0.9.1",
     "luxon": "^1.25.0",
     "next": "^9.5.3",
+    "p5": "^1.1.9",
     "prism-themes": "^1.4.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",

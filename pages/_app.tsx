@@ -1,11 +1,14 @@
 import { AppProps } from 'next/app';
 import Link from 'next/link';
 import Router from 'next/router';
+import dynamic from 'next/dynamic';
 import 'react-notion/src/styles.css';
 import 'prism-themes/themes/prism-vs.css';
 import Head from 'next/head';
 import { useEffect } from 'react';
 import { GA_ID, pageview } from '../libs/gtag';
+const Animation = dynamic<{}>(() => import('../components/Animation'), { ssr: false });
+
 const MyApp = ({ Component, pageProps, router }: AppProps) => {
   useEffect(() => {
     if (!GA_ID) {
@@ -110,6 +113,7 @@ const MyApp = ({ Component, pageProps, router }: AppProps) => {
           </>
         )}
       </div>
+      {(router.route === '/' || router.route.match(/(whoami|text)$/)) && <Animation />}
     </>
   );
 };
