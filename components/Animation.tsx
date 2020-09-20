@@ -10,7 +10,10 @@ const sketch = (p: p5) => {
     p.background(255);
     p.frameRate(30);
     p.stroke(0);
-    const a = (p.mouseY / p.width) * 180;
+    if(p.frameCount > 300){
+        p.noLoop()
+    }
+    const a = (p.frameCount / p.width) * 180;
     theta = p.radians(a);
     p.translate(p.width / 2, p.height);
     p.line(0, 0, 0, -10);
