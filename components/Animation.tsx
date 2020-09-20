@@ -8,8 +8,12 @@ const sketch = (p: p5) => {
   let theta = 0;
   p.draw = () => {
     p.background(255);
-    p.stroke(0);
+    p.stroke(200);
+    p.stroke(200);
     const a = (p.frameCount / p.width) * 180;
+    if (a > 40) {
+      p.noLoop();
+    }
     theta = p.radians(a);
     p.translate(p.width / 2, p.height);
     p.line(0, 0, 0, -100);
