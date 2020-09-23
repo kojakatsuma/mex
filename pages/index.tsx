@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-export default () => {
+const Top =  () => {
   return (
     <>
       <Link href='log'>
@@ -17,3 +17,6 @@ export default () => {
     </>
   );
 };
+
+
+export default Top

@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-export default () => {
+const Text = () => {
   return (
     <>
       <Link href='text/8'>
@@ -33,3 +33,5 @@ export default () => {
     </>
   );
 };
+
+export default Text

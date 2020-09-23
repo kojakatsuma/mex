@@ -1,5 +1,5 @@
 import App from '../components/App'
 
-export default () => (
-  <App />
-)
+const Log = () => <App />;
+
+export default Log;

@@ -24,7 +24,9 @@ export async function getStaticProps() {
   };
 }
 
-export default (props: Props) => <Text {...props} />;
+const Text${filename} = (props: Props) => <Text {...props} />;
+
+export default Text${filename}
 
 `;
 

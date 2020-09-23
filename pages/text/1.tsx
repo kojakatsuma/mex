@@ -17,11 +17,13 @@ export async function getStaticProps() {
   };
 }
 
-export default ({ createdTime, lastEditedTime, blockMap }) => (
+const Text1 = ({ createdTime, lastEditedTime, blockMap }) => (
   <>
-    <OGPHeader url={'/text/1'} title={'生活を改善する3月'} metaDescription={'生活を改善するための月報'}/>
+    <OGPHeader url={'/text/1'} title={'生活を改善する3月'} metaDescription={'生活を改善するための月報'} />
     Created: {createdTime} <br />
     Last Edited: {lastEditedTime}
     <NotionRenderer blockMap={blockMap} />
   </>
 );
+
+export default Text1;

@@ -13,5 +13,7 @@ export async function getStaticProps() {
   };
 }
 
-export default (props: Props) => <Text {...props} />;
+const Text5 = (props: Props) => <Text {...props} />;
+
+export default Text5
 
