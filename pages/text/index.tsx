@@ -3,6 +3,9 @@ import Link from 'next/link';
 const Text = () => {
   return (
     <>
+      <Link href='text/9'>
+        <h3 className='menu'>Mac Book Proのストレージがその他で圧迫されていた</h3>
+      </Link>
       <Link href='text/8'>
         <h3 className='menu'>amazonの欲しいものリストにある本が近隣図書館にもあるか調べる</h3>
       </Link>
@@ -34,4 +37,4 @@ const Text = () => {
   );
 };
 
-export default Text
+export default Text;

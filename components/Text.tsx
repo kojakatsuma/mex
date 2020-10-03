@@ -21,7 +21,7 @@ export const Text = ({ blockMap, url }: Props) => {
       <OGPHeader url={url} title={title} metaDescription={metaDescription} />
       <h1 className='notion-h1'>{title}</h1>
       <p>
-        Created: {fmtDateTime(created_time)}, Last Edited: {fmtDateTime(last_edited_time)}{' '}
+        Created: {fmtDateTime(created_time)}<br/>Last Edited: {fmtDateTime(last_edited_time)}
       </p>
       <NotionRenderer blockMap={blockMap} />
     </>
