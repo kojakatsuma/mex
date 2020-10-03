@@ -30,10 +30,6 @@ const MyApp = ({ Component, pageProps, router }: AppProps) => {
       </Head>
       <style jsx={true} global={true}>
         {`
-          .inactive-link {
-            color: #111111;
-            text-decoration: none;
-          }
           a {
             color: #0366d6;
             text-decoration: none;
@@ -49,6 +45,13 @@ const MyApp = ({ Component, pageProps, router }: AppProps) => {
           h6 {
             font-family: 'Hiragino Sans', sans-serif;
             font-weight: 200;
+          }
+          .log-text .notion {
+            line-height: 30px;
+          }
+          .notion-link {
+            color: #0366d6;
+            text-decoration: none;
           }
           hr {
             border: none;
