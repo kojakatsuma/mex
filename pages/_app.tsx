@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Router from 'next/router';
 import dynamic from 'next/dynamic';
 import 'react-notion/src/styles.css';
-import 'prism-themes/themes/prism-vs.css';
+import 'prism-themes/themes/prism-a11y-dark.css';
 import Head from 'next/head';
 import { useEffect } from 'react';
 import { GA_ID, pageview } from '../libs/gtag';
