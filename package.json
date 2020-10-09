@@ -20,7 +20,7 @@
     "postmaketext": "node scripts/makesitemap.js"
   },
   "dependencies": {
-    "@mdx-js/loader": "^1.6.16",
+    "@mdx-js/loader": "^1.6.18",
     "@types/p5": "^0.9.1",
     "luxon": "^1.25.0",
     "next": "^9.5.4",
