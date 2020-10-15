@@ -17,7 +17,9 @@ export const Log: React.FC<{ blockMaps: BlockMapType[] }> = ({ blockMaps }) => {
           return (
             <Fragment key={i}>
               <div className='log-text'>
-                <h2>{title}</h2>
+                <h2 id={title}>
+                <a href={`#${title}`} className="inactive-link">{title}</a>
+                  </h2>
                 <NotionRenderer blockMap={blockMap} />
                 <Link href='/'>
                   <h3 className='menu'>{'back to top'}</h3>
