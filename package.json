@@ -26,7 +26,7 @@
     "next": "^9.5.5",
     "p5": "^1.1.9",
     "prism-themes": "^1.4.1",
-    "react": "16.13.1",
+    "react": "16.14.0",
     "react-dom": "16.13.1",
     "react-notion": "^0.8.2",
     "react-twitter-embed": "^3.0.3"
