@@ -50,6 +50,13 @@ const MyApp = ({ Component, pageProps, router }: AppProps) => {
             font-family: 'Hiragino Sans', sans-serif;
             font-weight: 200;
           }
+          .log-text .notion {
+            line-height: 30px;
+          }
+          .notion-link {
+            color: #0366d6;
+            text-decoration: none;
+          }
           hr {
             border: none;
             height: 1px;
