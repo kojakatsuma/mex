@@ -30,6 +30,10 @@ const MyApp = ({ Component, pageProps, router }: AppProps) => {
       </Head>
       <style jsx={true} global={true}>
         {`
+          .inactive-link {
+            color: #111111;
+            text-decoration: none;
+          }
           a {
             color: #0366d6;
             text-decoration: none;
