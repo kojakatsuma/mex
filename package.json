@@ -13,9 +13,6 @@
     "start": "next start -p 8080",
     "lint-app": "tslint --project",
     "typecheck-app": "tsc --project",
-    "builds": "gcloud builds submit --tag gcr.io/caramel-spot-275216/mex",
-    "deploy": "gcloud run deploy mex --image=gcr.io/caramel-spot-275216/mex --platform=managed --region=us-central1",
-    "makelog": "node scripts/makelog.js",
     "maketext": "node scripts/maketext.js",
     "postmaketext": "node scripts/makesitemap.js"
   },
