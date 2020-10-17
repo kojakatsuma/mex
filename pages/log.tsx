@@ -1,8 +1,9 @@
+import { GetStaticProps } from 'next';
 import { BlockMapType } from 'react-notion';
 import { Log } from '../components/Log';
 import { OGPHeader } from '../components/OGPHeader';
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps<{ blockMaps: BlockMapType[] }> = async () => {
   const data: BlockMapType = await fetch(
     'https://notion-api.splitbee.io/v1/page/7e94045672674171ab6c8bafc4682fa8',
   ).then((res) => res.json());
@@ -15,8 +16,9 @@ export async function getStaticProps() {
     props: {
       blockMaps: pages,
     },
+    revalidate: 10
   };
-}
+};
 
 const Logs = (props) => (
   <>
