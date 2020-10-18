@@ -4,7 +4,6 @@ import { fmtDateTime } from '../utils/index';
 
 export interface Props {
   url: string,
-  metaDescription: string;
   blockMap: BlockMapType;
 }
 
