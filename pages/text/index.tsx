@@ -25,7 +25,7 @@ export const getStaticProps: GetStaticProps<{ links: { url: string; title: strin
 
 const Text: React.FC<{ links: { url: string; title: string }[] }> = ({ links }) => (
   <>
-    <OGPHeader url={'/log'} title='log' metaDescription={'日記です'} />
+    <OGPHeader url={'/text'} title='text' metaDescription={'記事一覧'} />
     {links.map(({ url: href, title }, i) => (
       <Link key={i} href='/text/[id]' as={href}>
         <h3 className='menu'>{title}</h3>
