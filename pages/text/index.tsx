@@ -1,40 +1,37 @@
+import { GetStaticProps } from 'next';
 import Link from 'next/link';
+import { BlockMapType } from 'react-notion';
+import { OGPHeader } from '../../components/OGPHeader';
 
-const Text = () => {
-  return (
-    <>
-      <Link href='text/9'>
-        <h3 className='menu'>Mac Book Proのストレージがその他で圧迫されていた</h3>
-      </Link>
-      <Link href='text/8'>
-        <h3 className='menu'>amazonの欲しいものリストにある本が近隣図書館にもあるか調べる</h3>
-      </Link>
-      <Link href='text/7'>
-        <h3 className='menu'>TouchDesignerのCHOP自分用まとめ</h3>
-      </Link>
-      <Link href='text/6'>
-        <h3 className='menu'>オンラインセッションを録音する その2</h3>
-      </Link>
-      <Link href='text/5'>
-        <h3 className='menu'>react-routerとreact-router-domの違い</h3>
-      </Link>
-      <Link href='text/4'>
-        <h3 className='menu'>react-router-domのSwitchは必要？</h3>
-      </Link>
-      <Link href='text/3'>
-        <h3 className='menu'>「可傷的な歴史(ロードムービー)」を観た</h3>
-      </Link>
-      <Link href='text/2'>
-        <h3 className='menu'>オンラインセッションを録音する</h3>
-      </Link>
-      <Link href='text/1'>
-        <h3 className='menu'>生活を改善する3月</h3>
-      </Link>
-      <a className='menu' href='https://qiita.com/koja1234'>
-        <h3>Qiitaの投稿記事</h3>
-      </a>
-    </>
+export const getStaticProps: GetStaticProps<{ links: { url: string; title: string; }[] }> = async () => {
+  const data: BlockMapType = await fetch(
+    'https://notion-api.splitbee.io/v1/page/3495da64c3fa419a83d0f53cd8a671df',
+  ).then((res) => res.json());
+  const links: { url: string; title: string; }[] = await Promise.all(
+    Object.entries(data)
+      .filter(([_key, { value }], i) => i !== 0 && value.type === 'page')
+      .map(([_key, { value }], index, pages) => {
+        const title = value.properties.title[0][0];
+        return { url: `text/${pages.length - index}`, title };
+      }),
   );
+  return {
+    props: {
+      links,
+    },
+    revalidate: 10,
+  };
 };
+
+const Text: React.FC<{ links: { url: string; title: string }[] }> = ({ links }) => (
+  <>
+    <OGPHeader url={'/text'} title='text' metaDescription={'記事一覧'} />
+    {links.map(({ url: href, title }, i) => (
+      <Link key={i} href='/text/[id]' as={href}>
+        <h3 className='menu'>{title}</h3>
+      </Link>
+    ))}
+  </>
+);
 
 export default Text;
