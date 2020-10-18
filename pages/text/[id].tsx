@@ -3,34 +3,23 @@ import { BlockMapType } from 'react-notion';
 import { Text } from '../../components/Text';
 
 export const getStaticProps = async (context) => {
-  const id = Number(context.params.id);
-  const data: BlockMapType = await fetch(
-    'https://notion-api.splitbee.io/v1/page/3495da64c3fa419a83d0f53cd8a671df',
+  const paramId = Number(context.params.id);
+  const data: { id: string; Name: string }[] = await fetch(
+    'https://notion-api.splitbee.io/v1/table/ab46b7d1f5ce4bc48588c475b2682624',
   ).then((res) => res.json());
   const posts: BlockMapType[] = await Promise.all(
-    Object.entries(data)
-      .filter(([_key, { value }], i) => i !== 0 && value.type === 'page')
-      .filter(([_key], i, pages) => {
-        return pages.length - i === id;
-      })
-      .map(([key]) => {
-        return fetch(`https://notion-api.splitbee.io/v1/page/${key}`).then((res) => res.json());
-      }),
+    data
+      .filter((_, i) => data.length - i === paramId)
+      .map(({ id }) => fetch(`https://notion-api.splitbee.io/v1/page/${id}`).then((res) => res.json())),
   );
-  return { props: { id, post: posts[0] } };
+  return { props: { id: paramId, post: posts[0] } };
 };
 
 export const getStaticPaths: GetStaticPaths<{ paths: string[] }> = async () => {
-  const data: BlockMapType = await fetch(
-    'https://notion-api.splitbee.io/v1/page/3495da64c3fa419a83d0f53cd8a671df',
+  const data: { id: string; Name: string }[] = await fetch(
+    'https://notion-api.splitbee.io/v1/table/ab46b7d1f5ce4bc48588c475b2682624',
   ).then((res) => res.json());
-  const paths = await Promise.all(
-    Object.entries(data)
-      .filter(([_key, { value }], i) => i !== 0 && value.type === 'page')
-      .map((_, index, pages) => {
-        return `/text/${pages.length - index}`;
-      }),
-  );
+  const paths = data.map((_, i) => `/text/${data.length - i}`);
   return { paths, fallback: true };
 };
 

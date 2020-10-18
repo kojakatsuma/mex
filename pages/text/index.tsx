@@ -1,20 +1,12 @@
 import { GetStaticProps } from 'next';
 import Link from 'next/link';
-import { BlockMapType } from 'react-notion';
 import { OGPHeader } from '../../components/OGPHeader';
 
-export const getStaticProps: GetStaticProps<{ links: { url: string; title: string; }[] }> = async () => {
-  const data: BlockMapType = await fetch(
-    'https://notion-api.splitbee.io/v1/page/3495da64c3fa419a83d0f53cd8a671df',
+export const getStaticProps: GetStaticProps<{ links: { url: string; title: string }[] }> = async () => {
+  const data: { id: string; Name: string }[] = await fetch(
+    'https://notion-api.splitbee.io/v1/table/ab46b7d1f5ce4bc48588c475b2682624',
   ).then((res) => res.json());
-  const links: { url: string; title: string; }[] = await Promise.all(
-    Object.entries(data)
-      .filter(([_key, { value }], i) => i !== 0 && value.type === 'page')
-      .map(([_key, { value }], index, pages) => {
-        const title = value.properties.title[0][0];
-        return { url: `text/${pages.length - index}`, title };
-      }),
-  );
+  const links = data.map(({ Name }, i) => ({ url: `text/${data.length - i}`, title: Name }));
   return {
     props: {
       links,
