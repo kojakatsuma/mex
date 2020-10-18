@@ -16,8 +16,10 @@ export const Text = ({ blockMap, url }: Props) => {
   const { created_time, last_edited_time, properties: titleprops } = Object.values(blockMap)[0]
     .value as BaseTextValueType;
 
-  const { properties } = Object.values(blockMap)[1].value as BaseTextValueType;
-  const metaDescription = properties?.title[0][0];
+  const metaDescription = Object.values(blockMap)
+    .filter(({ value }) => value.type === 'text')
+    .map(({ value }) => value.properties?.title[0][0])
+    .join('');
 
   const title = titleprops?.title[0][0] || '';
   return (
