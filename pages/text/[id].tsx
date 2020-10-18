@@ -31,7 +31,7 @@ export const getStaticPaths: GetStaticPaths<{ paths: string[] }> = async () => {
         return `/text/${pages.length - index}`;
       }),
   );
-  return { paths, fallback: false };
+  return { paths, fallback: true };
 };
 
 const PostText: React.FC<{ id: string; post: BlockMapType }> = ({ id, post }) => {
