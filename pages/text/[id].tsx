@@ -1,4 +1,5 @@
 import { GetStaticPaths } from 'next';
+import Link from 'next/link';
 import { BlockMapType } from 'react-notion';
 import { Text } from '../../components/Text';
 
@@ -24,7 +25,18 @@ export const getStaticPaths: GetStaticPaths<{ paths: string[] }> = async () => {
 };
 
 const PostText: React.FC<{ id: string; post: BlockMapType }> = ({ id, post }) => {
-  return <Text url={`/text/${id}`} blockMap={post} />;
+  return (
+    <>
+      <Text url={`/text/${id}`} blockMap={post} />
+      <hr />
+      <Link href='/text'>
+        <h3 className='menu'>{'back to text list'}</h3>
+      </Link>
+      <Link href='/'>
+        <h3 className='menu'>{'back to top'}</h3>
+      </Link>
+    </>
+  );
 };
 
 export default PostText;

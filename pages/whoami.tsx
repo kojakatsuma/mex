@@ -1,6 +1,7 @@
+import Link from 'next/link';
 import { OGPHeader } from '../components/OGPHeader';
 
-const WhoamI =  () => {
+const WhoamI = () => {
   return (
     <>
       <OGPHeader url='/whoami' title={'who am i?'} />
@@ -20,8 +21,12 @@ const WhoamI =  () => {
       <a className='menu' href='https://soundcloud.com/sokshinbutwo'>
         SoundCloud
       </a>
+      <hr />
+      <Link href='/'>
+        <h3 className='menu'>{'back to top'}</h3>
+      </Link>
     </>
   );
 };
 
-export default WhoamI
+export default WhoamI;

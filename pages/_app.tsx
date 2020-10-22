@@ -111,14 +111,6 @@ const MyApp = ({ Component, pageProps, router }: AppProps) => {
           <h3>here is mexico.</h3>
         </div>
         <Component {...pageProps} />
-        {router.route !== '/' && router.route !== '/log' && (
-          <>
-            <hr />
-            <Link href='/'>
-              <h3 className='menu'>{'back to top'}</h3>
-            </Link>
-          </>
-        )}
       </div>
       {(router.route === '/' || router.route.match(/(whoami|text)$/)) && <Animation />}
     </>

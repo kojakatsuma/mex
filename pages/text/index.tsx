@@ -23,6 +23,10 @@ const Text: React.FC<{ links: { url: string; title: string }[] }> = ({ links }) 
         <h3 className='menu'>{title}</h3>
       </Link>
     ))}
+    <hr />
+    <Link href='/'>
+      <h3 className='menu'>{'back to top'}</h3>
+    </Link>
   </>
 );
 
