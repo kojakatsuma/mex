@@ -80,7 +80,7 @@ const MyApp = ({ Component, pageProps, router }: AppProps) => {
             margin-top: 0px;
             margin-bottom: 0px;
           }
-          body {
+          .notion {
             font-size: 16px;
             line-height: 30px;
           }
