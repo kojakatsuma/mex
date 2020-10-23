@@ -81,8 +81,10 @@ const MyApp = ({ Component, pageProps, router }: AppProps) => {
             margin-bottom: 0px;
           }
           .notion {
-            font-size: 16px;
             line-height: 30px;
+          }
+          .notion .notion-code {
+            font-size: 15px;
           }
           .header {
             margin-top: 50px;
@@ -100,6 +102,7 @@ const MyApp = ({ Component, pageProps, router }: AppProps) => {
           }
           .notion-quote {
             color: #777777;
+            font-size: 16px;
           }
         `}
       </style>
