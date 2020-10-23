@@ -12,18 +12,26 @@ export const getStaticProps: GetStaticProps<{ blockMaps: BlockMapType[] }> = asy
       .filter(([_key, { value }], i) => i !== 0 && value.type === 'page')
       .map(([key]) => fetch(`https://notion-api.splitbee.io/v1/page/${key}`).then((res) => res.json())),
   );
+  const metaDescription = pages
+    .map((page) =>
+      Object.values(page)
+        .filter(({ value }) => value.properties)
+        .map(({ value }) => value.properties?.title),
+    )
+    .join('');
   return {
     props: {
+      metaDescription,
       blockMaps: pages,
     },
-    revalidate: 10
+    revalidate: 10,
   };
 };
 
-const Logs = (props) => (
+const Logs = ({ metaDescription, blockMaps }) => (
   <>
-    <OGPHeader url={'/log'} title='log' metaDescription={'日記です'} />
-    <Log {...props} />
+    <OGPHeader url={'/log'} title='log' metaDescription={metaDescription} />
+    <Log blockMaps={blockMaps} />
   </>
 );
 
