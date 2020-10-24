@@ -7,6 +7,8 @@ import 'prism-themes/themes/prism-a11y-dark.css';
 import Head from 'next/head';
 import { useEffect } from 'react';
 import { GA_ID, pageview } from '../libs/gtag';
+import { Fade } from '../components/Fade';
+
 const Animation = dynamic<{}>(() => import('../components/Animation'), { ssr: false });
 
 const MyApp = ({ Component, pageProps, router }: AppProps) => {
@@ -104,16 +106,24 @@ const MyApp = ({ Component, pageProps, router }: AppProps) => {
             color: #777777;
             font-size: 16px;
           }
+          .content {
+            max-width: 900px;
+            padding: 5px;
+            margin-left: auto;
+            margin-right: auto;
+          }
         `}
       </style>
-      <div style={{ maxWidth: 900, padding: '5px', marginLeft: 'auto', marginRight: 'auto' }}>
-        <div className='header'>
-          <Link href='/'>
-            <h1>Mex</h1>
-          </Link>
-          <h3>here is mexico.</h3>
-        </div>
-        <Component {...pageProps} />
+      <div className='content'>
+        <Fade loc={router.pathname}>
+          <div className='header'>
+            <Link href='/'>
+              <h1>Mex</h1>
+            </Link>
+            <h3>here is mexico.</h3>
+          </div>
+          <Component {...pageProps} />
+        </Fade>
       </div>
       {(router.route === '/' || router.route.match(/(whoami|text)$/)) && <Animation />}
     </>
