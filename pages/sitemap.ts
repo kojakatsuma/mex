@@ -1,3 +1,4 @@
+import { TABLE_TOKEN } from '../libs/notion-blog-post';
 import { GetServerSideProps } from 'next';
 import fetch from 'node-fetch';
 
@@ -20,7 +21,7 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
         { loc: '/text', priority: 0.5 },
         { loc: '/whoami', priority: 0.5 }]
     const data: { id: string; Name: string }[] = await fetch(
-        'https://notion-api.splitbee.io/v1/table/ab46b7d1f5ce4bc48588c475b2682624',
+        `https://notion-api.splitbee.io/v1/table/${TABLE_TOKEN}`,
     ).then((response: Response) => response.json());
     const paths = staticPaths.concat(data.map((_, i) => ({ loc: `/text/${data.length - i}`, priority: 1 })));
     res.setHeader('content-type', 'application/xml');
