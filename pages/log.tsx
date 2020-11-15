@@ -1,5 +1,5 @@
 import { GetStaticProps } from 'next';
-import { BlockMapType } from 'react-notion';
+import { BlockMapType } from 'react-notion-dev';
 import { Log } from '../components/Log';
 import { OGPHeader } from '../components/OGPHeader';
 

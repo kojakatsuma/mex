@@ -1,7 +1,7 @@
 import { TABLE_TOKEN } from '../../libs/notion-blog-post';
 import { GetStaticPaths } from 'next';
 import Link from 'next/link';
-import { BlockMapType } from 'react-notion';
+import { BlockMapType } from 'react-notion-dev';
 import { Text } from '../../components/Text';
 
 export const getStaticProps = async (context) => {
