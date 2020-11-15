@@ -1,10 +1,11 @@
+import { TABLE_TOKEN } from '../../libs/notion-blog-post';
 import { GetStaticProps } from 'next';
 import Link from 'next/link';
 import { OGPHeader } from '../../components/OGPHeader';
 
 export const getStaticProps: GetStaticProps<{ links: { url: string; title: string }[] }> = async () => {
   const data: { id: string; Name: string }[] = await fetch(
-    'https://notion-api.splitbee.io/v1/table/ab46b7d1f5ce4bc48588c475b2682624',
+    `https://notion-api.splitbee.io/v1/table/${TABLE_TOKEN}`,
   ).then((res) => res.json());
   const links = data.map(({ Name }, i) => ({ url: `text/${data.length - i}`, title: Name }));
   return {
