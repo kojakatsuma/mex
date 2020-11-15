@@ -1,8 +1,8 @@
-import { NotionRenderer, BlockMapType, BaseTextValueType } from 'react-notion';
+import { NotionRenderer, BlockMapType, BaseTextValueType } from 'react-notion-dev';
 import { OGPHeader } from './OGPHeader';
 import { fmtDateTime } from '../utils/index';
 import { useRouter } from 'next/router';
-
+import { TweetEmbed } from './TweetEmbed';
 export interface Props {
   url: string;
   blockMap: BlockMapType;
@@ -31,7 +31,15 @@ export const Text = ({ blockMap, url }: Props) => {
         <br />
         Last Edited: {fmtDateTime(last_edited_time)}
       </p>
-      <NotionRenderer blockMap={blockMap} />
+      <NotionRenderer
+        blockMap={blockMap}
+        customBlockComponents={{
+          tweet: ({ blockValue }) => {
+            const path = blockValue.properties.source[0][0] as string;
+            return <TweetEmbed tweetUrl={path} />;
+          },
+        }}
+      />
     </>
   );
 };

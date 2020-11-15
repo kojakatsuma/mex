@@ -1,6 +1,7 @@
-import { NotionRenderer, BlockMapType, BaseTextValueType } from 'react-notion';
+import { NotionRenderer, BlockMapType, BaseTextValueType } from 'react-notion-dev';
 import { Fragment } from 'react';
 import Link from 'next/link';
+import { TweetEmbed } from './TweetEmbed';
 
 export const Log: React.FC<{ blockMaps: BlockMapType[] }> = ({ blockMaps }) => {
   return (
@@ -18,9 +19,19 @@ export const Log: React.FC<{ blockMaps: BlockMapType[] }> = ({ blockMaps }) => {
             <Fragment key={i}>
               <div className='log-text'>
                 <h2 id={title}>
-                <a href={`#${title}`} className='inactive-link'>{title}</a>
-                  </h2>
-                <NotionRenderer blockMap={blockMap} />
+                  <a href={`#${title}`} className='inactive-link'>
+                    {title}
+                  </a>
+                </h2>
+                <NotionRenderer
+                  blockMap={blockMap}
+                  customBlockComponents={{
+                    tweet: ({ blockValue }) => {
+                      const path = blockValue.properties.source[0][0] as string;
+                      return <TweetEmbed tweetUrl={path} />;
+                    },
+                  }}
+                />
                 <Link href='/'>
                   <h3 className='menu'>{'back to top'}</h3>
                 </Link>
@@ -32,3 +43,4 @@ export const Log: React.FC<{ blockMaps: BlockMapType[] }> = ({ blockMaps }) => {
     </>
   );
 };
+

@@ -1,6 +1,6 @@
-import reactNotion from "react-notion";
+import reactNotion from "react-notion-dev";
 
-declare module "react-notion" {
+declare module "react-notion-dev" {
     export interface BlockType {
         value :{
             type: string
