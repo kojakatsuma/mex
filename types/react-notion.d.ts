@@ -1,9 +1,7 @@
-import reactNotion from "react-notion-dev";
-
+import "react-notion-dev";
 declare module "react-notion-dev" {
-    export interface BlockType {
-        value :{
-            type: string
-        }
+
+    export interface TweetType {
+        embed?: string
     }
 }
