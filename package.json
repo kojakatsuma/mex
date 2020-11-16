@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Host Next.js SSR app on Firebase Cloud Functions with Firebase Hosting redirects. Built with typescript.",
   "engines": {
-    "node": "10"
+    "node": "12"
   },
   "scripts": {
     "dev": "next",
@@ -25,8 +25,7 @@
     "prism-themes": "^1.5.0",
     "react": "16.14.0",
     "react-dom": "16.14.0",
-    "react-notion-dev": "^0.8.4",
-    "react-twitter-widgets": "^1.9.5"
+    "react-notion-dev": "^0.8.4"
   },
   "devDependencies": {
     "@babel/runtime": "^7.12.5",

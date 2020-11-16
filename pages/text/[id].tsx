@@ -14,7 +14,22 @@ export const getStaticProps = async (context) => {
       .filter((_, i) => data.length - i === paramId)
       .map(({ id }) => fetch(`https://notion-api.splitbee.io/v1/page/${id}`).then((res) => res.json())),
   );
-  return { props: { id: paramId, post: posts[0] } };
+  const post = await Promise.all(
+    Object.entries(posts[0]).map(async ([key, pos]) => {
+      if (pos.value.type === 'tweet') {
+        const tweetUrl = pos.value.properties.source[0][0] as string;
+        const tweetId = tweetUrl.match(/([^\/.]+)$/g)?.pop();
+        pos.value.embed = await fetch(
+          `https://api.twitter.com/1/statuses/oembed.json?id=${tweetId}`,
+        )
+          .then((res) => res.json())
+          .then((json) => json.html as string);
+        return [key, pos];
+      }
+      return [key, pos];
+    }),
+  );
+  return { props: { id: paramId, post: Object.fromEntries(post) } };
 };
 
 export const getStaticPaths: GetStaticPaths<{ paths: string[] }> = async () => {
