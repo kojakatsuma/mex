@@ -11,7 +11,7 @@ export const OGPHeader = ({ url, title, image, metaDescription = '' }: Props) =>
   return (
     <Head>
       <title key='title'>{title} - mex.busui.org</title>
-      <meta name='twitter:card' content='summary' />
+      <meta name='twitter:card' content='summary_large_image' />
       <meta name='twitter:site' content='@keihin194' />
       <meta name='twitter:creator' content='@keihin194' />
       <meta property='og:url' content={url} />
