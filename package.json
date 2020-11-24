@@ -19,7 +19,7 @@
   "dependencies": {
     "@types/p5": "^0.9.1",
     "luxon": "^1.25.0",
-    "next": "^10.0.2",
+    "next": "^10.0.3",
     "node-fetch": "^2.6.1",
     "p5": "^1.1.9",
     "prism-themes": "^1.5.0",
