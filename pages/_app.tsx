@@ -1,16 +1,14 @@
 import { AppProps } from 'next/app';
 import Link from 'next/link';
 import Router from 'next/router';
-import dynamic from 'next/dynamic';
 import 'react-notion-dev/src/styles.css';
 import 'prism-themes/themes/prism-a11y-dark.css';
 import Head from 'next/head';
 import { useEffect } from 'react';
 import { GA_ID, pageview } from '../libs/gtag';
 import { ColorModeToggle } from 'components/ColorModeToggle';
-const Animation = dynamic<{}>(() => import('../components/Animation'), { ssr: false });
 
-const MyApp = ({ Component, pageProps, router }: AppProps) => {
+const MyApp = ({ Component, pageProps }: AppProps) => {
   useEffect(() => {
     if (!GA_ID) {
       return;
@@ -138,7 +136,6 @@ const MyApp = ({ Component, pageProps, router }: AppProps) => {
           </div>
           <Component {...pageProps} />
       </div>
-      {(router.route === '/' || router.route.match(/(whoami|text)$/)) && <Animation />}
     </>
   );
 };
