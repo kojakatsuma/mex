@@ -1,3 +1,4 @@
+import { ColorThemeScript } from 'components/ColorThemeScript';
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 
 import { GA_ID } from '../libs/gtag';
@@ -25,6 +26,7 @@ export default class MyDocument extends Document {
           )}
         </Head>
         <body>
+          <ColorThemeScript />
           <Main />
           <NextScript />
         </body>

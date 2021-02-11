@@ -9,7 +9,7 @@ const sketch = (p: p5) => {
 
   p.draw = () => {
     let theta = 0;
-    p.background(255);
+    p.clear()
     const a = 180 / (p.frameCount / p.width);
     theta = p.radians(a);
     p.translate(p.width / 2, p.height / 1.5);
@@ -63,6 +63,7 @@ const Animation: React.FC = () => {
     if (target && target.current) {
       // tslint:disable-next-line:no-unused-expression
       new p5(sketch, target.current);
+      console.log('hoge')
     }
   }, []);
   return <div style={{ top: 0, left: 0, position: 'fixed', zIndex: -10 }} ref={target} />;
