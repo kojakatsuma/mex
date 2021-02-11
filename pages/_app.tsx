@@ -7,6 +7,7 @@ import 'prism-themes/themes/prism-a11y-dark.css';
 import Head from 'next/head';
 import { useEffect } from 'react';
 import { GA_ID, pageview } from '../libs/gtag';
+import { ColorModeToggle } from 'components/ColorModeToggle';
 const Animation = dynamic<{}>(() => import('../components/Animation'), { ssr: false });
 
 const MyApp = ({ Component, pageProps, router }: AppProps) => {
@@ -31,11 +32,11 @@ const MyApp = ({ Component, pageProps, router }: AppProps) => {
       <style jsx={true} global={true}>
         {`
           .inactive-link {
-            color: #111111;
             text-decoration: none;
+            color: inherit;
           }
           a {
-            color: #0366d6;
+            color: inherit;
             text-decoration: none;
           }
           .notion,
@@ -49,6 +50,7 @@ const MyApp = ({ Component, pageProps, router }: AppProps) => {
           h6 {
             font-family: 'Hiragino Sans', sans-serif;
             font-weight: 200;
+            color: inherit;
           }
           .log-text .notion {
             line-height: 30px;
@@ -104,16 +106,37 @@ const MyApp = ({ Component, pageProps, router }: AppProps) => {
             color: #777777;
             font-size: 16px;
           }
+          .notion-bookmark {
+            border-color: inherit;
+          }
+          .notion-bookmark * {
+            color: inherit !important;
+          }
+          body.light-mode {
+            background-color: #fff;
+            color: #333;
+            transition: background-color 0.3s ease;
+          }
+          body.dark-mode {
+            background-color: #1a1919;
+            color: #ffffff;
+            transition: background-color 0.3s ease;
+          }
+          body {
+            color: var(--color-text);
+            background: var(--color-background);
+          }
         `}
       </style>
       <div style={{ maxWidth: 900, padding: '5px', marginLeft: 'auto', marginRight: 'auto' }}>
-        <div className='header'>
-          <Link href='/'>
-            <h1>Mex</h1>
-          </Link>
-          <h3>here is mexico.</h3>
-        </div>
-        <Component {...pageProps} />
+          <ColorModeToggle />
+          <div className='header'>
+            <Link href='/'>
+              <h1>Mex</h1>
+            </Link>
+            <h3>here is mexico.</h3>
+          </div>
+          <Component {...pageProps} />
       </div>
       {(router.route === '/' || router.route.match(/(whoami|text)$/)) && <Animation />}
     </>
