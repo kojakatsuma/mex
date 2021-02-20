@@ -36,7 +36,6 @@ export const Log: React.FC<{ blockMaps: BlockMapType[] }> = ({ blockMaps }) => {
                   <h3 className='menu'>{'back to top'}</h3>
                 </Link>
               </div>
-              <hr />
             </Fragment>
           );
         })}

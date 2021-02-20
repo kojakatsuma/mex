@@ -57,11 +57,6 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
             color: #0366d6;
             text-decoration: none;
           }
-          hr {
-            border: none;
-            height: 1px;
-            background-color: #3333331f;
-          }
           h1 {
             font-size: 42.667px;
             line-height: 52px;
