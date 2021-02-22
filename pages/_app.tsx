@@ -26,7 +26,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
     <>
       <Head>
         <title>here is mexico</title>
-        <link href='https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&display=swap' rel='stylesheet' />
+        <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300&display=swap" rel="stylesheet" />
       </Head>
       <style jsx={true} global={true}>
         {`
@@ -47,8 +47,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
           h4,
           h6,
           h6 {
-            font-family: 'Hachi Maru Pop', cursive, 'Hiragino Sans', sans-serif;
-            font-weight: 200;
+            font-family: 'M PLUS Rounded 1c', sans-serif, 'Hiragino Sans', sans-serif;
             color: inherit;
           }
           .log-text .notion {
