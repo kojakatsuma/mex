@@ -1,7 +1,7 @@
 import { AppProps } from 'next/app';
 import Link from 'next/link';
 import Router from 'next/router';
-import 'react-notion-dev/src/styles.css';
+import 'react-notion/src/styles.css';
 import 'prism-themes/themes/prism-a11y-dark.css';
 import Head from 'next/head';
 import { useEffect } from 'react';

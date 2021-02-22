@@ -1,5 +1,5 @@
-import "react-notion-dev";
-declare module "react-notion-dev" {
+import "react-notion";
+declare module "react-notion" {
 
     export interface TweetType {
         embed?: string
