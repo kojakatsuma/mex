@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import { BaseTextValueType, BlockMapType, NotionRenderer, TweetType } from 'react-notion-dev';
+import { BaseTextValueType, BlockMapType, NotionRenderer, TweetType } from 'react-notion';
 import { fmtDateTime } from '../utils/index';
 import { OGPHeader } from './OGPHeader';
 import { TweetEmbed } from './TweetEmbed';
