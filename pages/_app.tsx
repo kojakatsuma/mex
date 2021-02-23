@@ -7,6 +7,7 @@ import Head from 'next/head';
 import { useEffect } from 'react';
 import { GA_ID, pageview } from '../libs/gtag';
 import { ColorModeToggle } from 'components/ColorModeToggle';
+import NextNprogress from 'nextjs-progressbar';
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   useEffect(() => {
@@ -22,6 +23,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
       Router.events.off('routeChangeComplete', handleRouteChange);
     };
   }, []);
+
   return (
     <>
       <Head>
@@ -122,14 +124,19 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         `}
       </style>
       <div style={{ maxWidth: 900, padding: '5px', marginLeft: 'auto', marginRight: 'auto' }}>
-          <ColorModeToggle />
-          <div className='header'>
-            <Link href='/'>
-              <h1>Mex</h1>
-            </Link>
-            <h3>here is mexico.</h3>
-          </div>
-          <Component {...pageProps} />
+        <ColorModeToggle />
+        <div className='header'>
+          <Link href='/'>
+            <h1>Mex</h1>
+          </Link>
+          <h3>here is mexico.</h3>
+        </div>
+        <NextNprogress
+          startPosition={0.3}
+          stopDelayMs={200}
+          height={5}
+        />
+        <Component {...pageProps} />
       </div>
     </>
   );
