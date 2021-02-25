@@ -26,7 +26,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
     <>
       <Head>
         <title>here is mexico</title>
-        <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300" rel="stylesheet" />
       </Head>
       <style jsx={true} global={true}>
         {`
