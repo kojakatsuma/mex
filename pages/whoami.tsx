@@ -10,16 +10,20 @@ const WhoamI = () => {
       <h2>job</h2>
       web engineer
       <h2>sns</h2>
+      <a className='menu' href='https://www.wantedly.com/id/kojakatsuma'>
+        wantedly
+      </a>
+      <br />
       <a className='menu' href='https://twitter.com/keihin194'>
         twitter
       </a>
       <br />
       <a className='menu' href='https://qiita.com/koja1234'>
-        Qiita
+        qiita
       </a>
       <br />
       <a className='menu' href='https://soundcloud.com/sokshinbutwo'>
-        SoundCloud
+        soundcloud
       </a>
       <hr />
       <Link href='/'>
