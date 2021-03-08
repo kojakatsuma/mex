@@ -95,6 +95,9 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
             color: #0366d6;
             text-decoration: none;
           }
+          a.menu {
+            font-size: 42.667px;
+          }
           .notion-quote {
             color: #777777;
             font-size: 16px;
