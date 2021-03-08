@@ -1,7 +1,7 @@
 import { NotionRenderer, BlockMapType, BaseTextValueType, TweetType } from 'react-notion';
-import { Fragment } from 'react';
 import Link from 'next/link';
 import { TweetEmbed } from './TweetEmbed';
+import { Lazy } from './Lazy';
 
 export const Log: React.FC<{ blockMaps: BlockMapType[] }> = ({ blockMaps }) => {
   return (
@@ -16,7 +16,7 @@ export const Log: React.FC<{ blockMaps: BlockMapType[] }> = ({ blockMaps }) => {
           const { properties: titleprops } = Object.values(blockMap)[0].value as BaseTextValueType;
           const title = titleprops?.title[0][0] || '';
           return (
-            <Fragment key={i}>
+            <Lazy key={i}>
               <div className='log-text'>
                 <h2 id={title}>
                   <a href={`#${title}`} className='inactive-link'>
@@ -36,7 +36,7 @@ export const Log: React.FC<{ blockMaps: BlockMapType[] }> = ({ blockMaps }) => {
                   <h3 className='menu'>{'back to top'}</h3>
                 </Link>
               </div>
-            </Fragment>
+            </Lazy>
           );
         })}
     </>
