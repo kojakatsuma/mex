@@ -29,7 +29,7 @@
     "react-notion": "^0.9.3"
   },
   "devDependencies": {
-    "@babel/runtime": "^7.13.9",
+    "@babel/runtime": "^7.13.10",
     "@types/luxon": "^1.26.2",
     "@types/node": "14.14.32",
     "@types/react": "^17.0.3",
