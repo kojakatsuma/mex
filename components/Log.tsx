@@ -33,7 +33,7 @@ export const Log: React.FC<{ blockMaps: BlockMapType[] }> = ({ blockMaps }) => {
                     },
                     bookmark: ({ blockValue }: { blockValue: any }) => {
                       const link = blockValue.properties.link;
-                      const title = blockValue.properties.title ?? link;
+                      const title = blockValue.properties.title ?? [[new URL(link).host]];
                       const description = blockValue.properties.description;
 
                       const block_color = blockValue.format?.block_color;
