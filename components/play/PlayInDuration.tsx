@@ -17,7 +17,7 @@ const sketch = (p: p5) => {
     p.createCanvas(p.windowWidth, p.windowHeight);
     startDatetime = Date.now();
     r = p.random(1, 10);
-    cr = Math.floor(p.random(0, 4));
+    cr = Math.floor(p.random(0, 5));
     p.colorMode(p.HSB);
   };
 
@@ -25,7 +25,7 @@ const sketch = (p: p5) => {
     if (diff < 0) {
       r = p.random(1, 10);
       startDatetime = Date.now();
-      cr = Math.floor(p.random(0, 4));
+      cr = Math.floor(p.random(0, 5));
     }
     p.clear();
     const progress = (Date.now() - startDatetime) / 1000;
