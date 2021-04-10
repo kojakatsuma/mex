@@ -8,24 +8,21 @@ const sketch = (p: p5) => {
   let cr = 0;
   const BLACK = p.color(0, 0, 0);
   const WHITE = p.color(255, 255, 255);
-  const BLUE = p.color(0, 0, 100);
-  const RED = p.color(200, 0, 0);
-  const GREEN = p.color(0, 100, 0);
-  const COLORS = [BLACK, WHITE, BLUE, GREEN, RED];
+  const COLORS = [BLACK, WHITE];
   
   p.setup = () => {
     p.createCanvas(p.windowWidth, p.windowHeight);
     startDatetime = Date.now();
-    r = p.random(1, 10);
-    cr = Math.floor(p.random(0, 5));
+    r = p.random(1,5);
+    cr = Math.floor(p.random(0, 2));
     p.colorMode(p.HSB);
   };
 
   p.draw = () => {
     if (diff < 0) {
-      r = p.random(1, 10);
+      r = p.random(1, 5);
       startDatetime = Date.now();
-      cr = Math.floor(p.random(0, 5));
+      cr = Math.floor(p.random(0, 2));
     }
     p.clear();
     const progress = (Date.now() - startDatetime) / 1000;
