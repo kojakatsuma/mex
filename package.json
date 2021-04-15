@@ -31,7 +31,7 @@
   "devDependencies": {
     "@babel/runtime": "^7.13.10",
     "@types/luxon": "^1.26.3",
-    "@types/node": "14.14.37",
+    "@types/node": "14.14.39",
     "@types/react": "^17.0.3",
     "@types/react-dom": "17.0.3",
     "tslint": "^6.1.3",
