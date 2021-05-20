@@ -4,11 +4,11 @@ const Play = () => {
   return (
     <>
       <Link href={'/play/playinduration'}>
-        <a className='menu'>play in duration</a>
+        <h1 className='menu'>play in duration</h1>
       </Link>
       <br />
       <Link href={'/play/pointtopoint'}>
-        <a className='menu'>point to point</a>
+        <h1 className='menu'>point to point</h1>
       </Link>
     </>
   );

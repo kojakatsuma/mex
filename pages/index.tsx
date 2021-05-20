@@ -4,15 +4,15 @@ const Top =  () => {
   return (
     <>
       <Link href='log'>
-        <a className='menu'>log</a>
+        <h1 className='menu'>log</h1>
       </Link>
       <br />
       <Link href='text'>
-        <a className='menu'>text</a>
+        <h1 className='menu'>text</h1>
       </Link>
       <br />
       <Link href='whoami'>
-        <a className='menu'>who am i?</a>
+        <h1 className='menu'>who am i?</h1>
       </Link>
     </>
   );
