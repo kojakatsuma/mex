@@ -17,7 +17,7 @@
     "postmaketext": "node scripts/makesitemap.js"
   },
   "dependencies": {
-    "@types/p5": "^0.9.1",
+    "@types/p5": "^1.3.0",
     "luxon": "^1.27.0",
     "next": "^10.2.3",
     "node-fetch": "^2.6.1",
