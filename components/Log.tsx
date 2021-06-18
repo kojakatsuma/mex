@@ -1,4 +1,4 @@
-import { NotionRenderer, BlockMapType, BaseTextValueType, TweetType, classNames, getTextContent } from 'react-notion';
+import { NotionRenderer, BlockMapType, BaseTextValueType, TweetType, classNames, getTextContent, ContentValueType } from 'react-notion';
 import { Fragment } from 'react';
 import Link from 'next/link';
 import { TweetEmbed } from './TweetEmbed';
@@ -29,7 +29,7 @@ export const Log: React.FC<{ blockMaps: BlockMapType[] }> = ({ blockMaps }) => {
                   customBlockComponents={{
                     tweet: ({ blockValue }) => {
                       const tweetValue = blockValue as TweetType;
-                      return <TweetEmbed embed={tweetValue.embed} />;
+                      return <TweetEmbed embed={tweetValue.embed || ''} />;
                     },
                     bookmark: ({ blockValue }: { blockValue: any }) => {
                       const link = blockValue.properties.link;
