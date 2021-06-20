@@ -1,4 +1,4 @@
-import { NotionRenderer, BlockMapType, BaseTextValueType, TweetType, classNames, getTextContent, ContentValueType } from 'react-notion';
+import { NotionRenderer, BlockMapType, BaseTextValueType, TweetType, classNames, getTextContent } from 'react-notion';
 import { Fragment } from 'react';
 import Link from 'next/link';
 import { TweetEmbed } from './TweetEmbed';
