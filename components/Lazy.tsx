@@ -45,7 +45,7 @@ export const Lazy = ({ children }: { children: React.ReactNode }) => {
   const target = useRef<HTMLDivElement>(null);
   const mounted = useScroll(target);
   return (
-    <div style={{ opacity: mounted ? 1 : 0.2,transition: 'all 1s'}} ref={target}>
+    <div style={{ opacity: mounted ? 1 : 0.2, transition: 'all 1s', WebkitTransition: 'all 1s' }} ref={target}>
       {mounted ? children : <div>loading</div>}
     </div>
   );
