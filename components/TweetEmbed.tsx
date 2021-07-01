@@ -1,5 +1,4 @@
 import { useEffect } from 'react';
-import { Lazy } from './Lazy';
 
 export const TweetEmbed: React.FC<{ embed?: string }> = ({ embed }) => {
   useEffect(() => {
@@ -24,12 +23,10 @@ export const TweetEmbed: React.FC<{ embed?: string }> = ({ embed }) => {
     return null;
   }
   return (
-    <Lazy>
-      <div style={{ display: 'flex' }}>
-        <div style={{ marginLeft: 'auto', marginRight: 'auto', maxWidth: 420, width: '100%' }}>
-          <div dangerouslySetInnerHTML={{ __html: embed.split('<script')[0] }} />
-        </div>
+    <div style={{ display: 'flex' }}>
+      <div style={{ marginLeft: 'auto', marginRight: 'auto', maxWidth: 420, width: '100%' }}>
+        <div dangerouslySetInnerHTML={{ __html: embed.split('<script')[0] }} />
       </div>
-    </Lazy>
+    </div>
   );
 };
