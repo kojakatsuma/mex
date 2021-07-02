@@ -56,7 +56,7 @@ export default Logs;
 async function getTweet(block) {
   const tweetUrl = block.value.properties.source[0][0] as string;
   const tweetId = tweetUrl.match(/([^\/.]+)$/g)?.pop();
-  return fetch(`https://api.twitter.com/1/statuses/oembed.json?id=${tweetId}`)
+  return fetch(`https://api.twitter.com/1/statuses/oembed.json?id=${tweetId}&omit_script=false`)
     .then((res) => res.json())
     .then((json) => json.html as string);
 }
