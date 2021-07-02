@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-const useScroll = (target: React.RefObject<HTMLDivElement>) => {
+export const useScroll = (target: React.RefObject<HTMLDivElement>) => {
   const [mounted, setMounted] = useState(false);
   useEffect(() => {
     if (!mounted && target && target.current) {
