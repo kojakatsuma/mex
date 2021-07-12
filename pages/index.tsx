@@ -3,15 +3,15 @@ import Link from 'next/link';
 const Top =  () => {
   return (
     <>
-      <Link href='log'>
+      <Link passHref href='log'>
         <h1 className='menu'>log</h1>
       </Link>
       <br />
-      <Link href='text'>
+      <Link passHref href='text'>
         <h1 className='menu'>text</h1>
       </Link>
       <br />
-      <Link href='whoami'>
+      <Link passHref href='whoami'>
         <h1 className='menu'>who am i?</h1>
       </Link>
     </>

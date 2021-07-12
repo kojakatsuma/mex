@@ -45,10 +45,10 @@ const PostText: React.FC<{ id: string; post: BlockMapType }> = ({ id, post }) =>
     <>
       <Text url={`/text/${id}`} blockMap={post} />
       <hr />
-      <Link href='/text'>
+      <Link passHref href='/text'>
         <h3 className='menu'>{'back to text list'}</h3>
       </Link>
-      <Link href='/'>
+      <Link passHref href='/'>
         <h3 className='menu'>{'back to top'}</h3>
       </Link>
     </>

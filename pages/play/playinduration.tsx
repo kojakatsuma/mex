@@ -7,7 +7,7 @@ const PlayInDurationPage = () => {
   return (
     <>
       <PlayInDuration />{' '}
-      <Link href='/'>
+      <Link passHref href='/'>
         <h3 className='menu'>{'back to top'}</h3>
       </Link>
     </>

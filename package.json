@@ -12,9 +12,7 @@
     "export": "next export",
     "start": "next start -p 8080",
     "lint-app": "tslint --project",
-    "typecheck-app": "tsc --project",
-    "maketext": "node scripts/maketext.js",
-    "postmaketext": "node scripts/makesitemap.js"
+    "typecheck-app": "tsc --project"
   },
   "dependencies": {
     "@types/p5": "^1.3.0",
@@ -34,6 +32,8 @@
     "@types/node": "16.3.1",
     "@types/react": "^17.0.14",
     "@types/react-dom": "17.0.9",
+    "eslint": "^7.30.0",
+    "eslint-config-next": "^11.0.1",
     "tslint": "^6.1.3",
     "tslint-react": "^5.0.0",
     "typescript": "^4.3.5"

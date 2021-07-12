@@ -26,7 +26,7 @@ const WhoamI = () => {
         soundcloud
       </a>
       <hr />
-      <Link href='/'>
+      <Link passHref href='/'>
         <h3 className='menu'>{'back to top'}</h3>
       </Link>
     </>

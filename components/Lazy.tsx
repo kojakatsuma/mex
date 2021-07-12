@@ -15,7 +15,7 @@ export const useScroll = (target: React.RefObject<HTMLDivElement>) => {
         setMounted(true);
       }
     }
-  }, [setMounted]);
+  }, [mounted,target]);
   useEffect(() => {
     const fire = () => {
       if (!mounted && target && target.current) {
@@ -37,7 +37,7 @@ export const useScroll = (target: React.RefObject<HTMLDivElement>) => {
       window.removeEventListener('scroll', fire);
     }
     return () => window.removeEventListener('scroll', fire);
-  }, [setMounted]);
+  }, [mounted,target]);
   return mounted;
 };
 

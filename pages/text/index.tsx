@@ -20,12 +20,12 @@ const Text: React.FC<{ links: { url: string; title: string }[] }> = ({ links }) 
   <>
     <OGPHeader url={'/text'} title='text' metaDescription={'記事一覧'} />
     {links.map(({ url: href, title }, i) => (
-      <Link key={i} href='/text/[id]' as={href}>
+      <Link key={i} href='/text/[id]' as={href} passHref>
         <h3 className='menu'>{title}</h3>
       </Link>
     ))}
     <hr />
-    <Link href='/'>
+    <Link href='/' passHref>
       <h3 className='menu'>{'back to top'}</h3>
     </Link>
   </>

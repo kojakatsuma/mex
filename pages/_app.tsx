@@ -124,7 +124,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
       <div style={{ maxWidth: 900, padding: '5px', marginLeft: 'auto', marginRight: 'auto' }}>
           <ColorModeToggle />
           <div className='header'>
-            <Link href='/'>
+            <Link passHref href='/'>
               <h1>Mex</h1>
             </Link>
             <h3>here is mexico.</h3>
