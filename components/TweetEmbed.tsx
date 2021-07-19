@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useScroll } from './Lazy';
 
 export const TweetEmbed: React.FC<{ embed?: string }> = ({ embed }) => {
@@ -30,10 +30,10 @@ export const TweetEmbed: React.FC<{ embed?: string }> = ({ embed }) => {
   const style = loading
     ? { display: 'flex', opacity: 0.2 }
     : { display: 'flex', opacity: 1, transition: 'all 1s', WebkitTransition: 'all 1s' };
-  
+
   return (
     <div ref={target} style={style}>
-      <div style={{...{ marginLeft: 'auto', marginRight: 'auto', maxWidth: 420, width: '100%' }}}>
+      <div style={{ ...{ marginLeft: 'auto', marginRight: 'auto', maxWidth: 420, width: '100%' } }}>
         <div dangerouslySetInnerHTML={{ __html: embed.split('<script')[0] }} />
       </div>
     </div>

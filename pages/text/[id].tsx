@@ -18,7 +18,7 @@ export const getStaticProps = async (context) => {
     Object.entries(posts[0]).map(async ([key, pos]) => {
       if (pos.value.type === 'tweet') {
         const tweetUrl = pos.value.properties.source[0][0] as string;
-        const tweetId = tweetUrl.match(/([^\/.]+)$/g)?.pop();
+        const tweetId = tweetUrl.match(/([^\\/.]+)$/g)?.pop();
         pos.value.embed = await fetch(
           `https://api.twitter.com/1/statuses/oembed.json?id=${tweetId}`,
         )

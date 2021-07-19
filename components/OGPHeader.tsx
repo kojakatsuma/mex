@@ -5,7 +5,7 @@ interface Props {
   title: string;
   image?: string;
   metaDescription?: string;
-};
+}
 
 export const OGPHeader = ({ url, title, image, metaDescription = '' }: Props) => {
   return (

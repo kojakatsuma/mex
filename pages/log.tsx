@@ -9,7 +9,7 @@ export const getStaticProps: GetStaticProps<{ blockMaps: BlockMapType[] }> = asy
   ).then((res) => res.json());
   const pages: BlockMapType[] = await Promise.all(
     Object.entries(data)
-      .filter(([_key, { value }], i) => i !== 0 && value.type === 'page')
+      .filter(([, { value }], i) => i !== 0 && value.type === 'page')
       .map(([key]) => fetch(`https://notion-api.splitbee.io/v1/page/${key}`).then((res) => res.json())),
   );
   const blocksWithTweet = await Promise.all(
@@ -55,7 +55,7 @@ export default Logs;
 
 async function getTweet(block) {
   const tweetUrl = block.value.properties.source[0][0] as string;
-  const tweetId = tweetUrl.match(/([^\/.]+)$/g)?.pop();
+  const tweetId = tweetUrl.match(/([^\\/.]+)$/g)?.pop();
   return fetch(`https://api.twitter.com/1/statuses/oembed.json?id=${tweetId}&omit_script=false`)
     .then((res) => res.json())
     .then((json) => json.html as string);

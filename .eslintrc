@@ -1,6 +1,19 @@
 {
-  "extends": "next",
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "extends": ["eslint:recommended", "plugin:react/recommended", "next"],
+  "plugins": ["react"],
   "rules": {
-    "react/display-name": "off"
+    "no-unused-vars": "warn",
+    "no-redeclare": "warn",
+    "react/display-name": "off",
+    "no-undef": "off"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
   }
 }
