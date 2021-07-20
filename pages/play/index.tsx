@@ -1,6 +1,7 @@
 import Link from 'next/link';
 
 const Play = () => {
+  console.log('hoge')
   return (
     <>
       <Link passHref href={'/play/playinduration'}>
